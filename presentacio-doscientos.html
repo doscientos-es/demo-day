@@ -687,29 +687,73 @@
     }
 
     .slide#solucio .grid {
+      grid-template-columns: 1fr;
       gap: 0;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 18px
+      margin-top: 1.5rem
     }
 
     .slide#solucio .card {
-      padding: 1.5rem;
+      padding: .75rem 0;
       border: 0;
-      border-right: 1px solid var(--line)
-    }
-
-    .slide#solucio .card:last-child {
-      border-right: 0
+      border-top: 1px solid var(--line)
     }
 
     .slide#solucio .card.hl {
-      background: var(--lime);
-      color: var(--bg)
+      background: transparent;
+      color: inherit
+    }
+
+    .slide#solucio .card.hl b {
+      color: var(--lime)
     }
 
     .slide#solucio .card.hl span {
-      color: rgb(20 39 31/.78)
+      color: var(--dim)
+    }
+
+    .js .slide.on#solucio {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      align-content: center;
+      align-items: center;
+      gap: 1.5rem clamp(2rem, 5vw, 6rem)
+    }
+
+    .slide#solucio .solution-copy {
+      min-width: 0
+    }
+
+    .slide#solucio .solution-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      gap: 1rem;
+      min-width: 0
+    }
+
+    .slide#solucio .solution-shot {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgb(255 255 255/.04)
+    }
+
+    .slide#solucio .solution-shot img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1.2;
+      padding: .4rem;
+      object-fit: contain;
+      background: #f3f5f1
+    }
+
+    .slide#solucio .solution-shot figcaption {
+      padding: .75rem .85rem;
+      color: var(--dim);
+      font-size: .82rem;
+      font-weight: 600;
+      line-height: 1.35
     }
 
     .slide#validacio {
@@ -1095,15 +1139,22 @@
         padding-inline: 1.5rem
       }
 
+      .js .slide.on#solucio {
+        grid-template-columns: 1fr;
+        align-content: start;
+        gap: 1rem
+      }
+
       .slide#solucio .grid {
-        gap: 1rem;
-        overflow: visible;
-        border: 0
+        gap: 0;
+        margin-top: 1rem
       }
 
       .slide#solucio .card {
-        border: 1px solid var(--line);
-        border-radius: 14px
+        padding: .6rem 0;
+        border: 0;
+        border-top: 1px solid var(--line);
+        border-radius: 0
       }
 
       .slide#competencia .grid {
@@ -1137,6 +1188,24 @@
     }
 
     @media(max-width:560px) {
+      .slide#solucio {
+        padding-block: 4.75rem 5.75rem
+      }
+
+      .slide#solucio .solution-showcase {
+        gap: .6rem
+      }
+
+      .slide#solucio .solution-shot img {
+        aspect-ratio: 1.05;
+        padding: .25rem
+      }
+
+      .slide#solucio .solution-shot figcaption {
+        padding: .6rem;
+        font-size: .7rem
+      }
+
       .slide#fites .grid {
         grid-template-columns: 1fr
       }
@@ -1205,14 +1274,29 @@
 
     <section class="slide" id="solucio" data-label="Solució · valor" data-nav-label="Solució"
       aria-labelledby="t-solucio">
-      <h2 id="t-solucio">Una aplicació que s'adapta <em>al negoci</em></h2>
-      <p class="lead">Creem aplicacions a mida: CRM i eines per coordinar operacions, rutes, serveis o facturació.</p>
-      <div class="grid">
-        <div class="card hl"><b>Tot en un lloc</b><span>Clients, feines i informació en un flux clar.</span></div>
-        <div class="card"><b>Menys feina manual</b><span>Automatitzem tasques i connectem les eines que ja feu
-            servir.</span></div>
-        <div class="card"><b>Creix amb l'empresa</b><span>L'aplicació evoluciona amb els vostres processos.</span>
+      <div class="solution-copy">
+        <h2 id="t-solucio">Una aplicació que s'adapta <em>al negoci</em></h2>
+        <p class="lead">Creem aplicacions a mida: CRM i eines per coordinar operacions, rutes, serveis o facturació.</p>
+        <div class="grid">
+          <div class="card hl"><b>Tot en un lloc</b><span>Clients, feines i informació en un flux clar.</span></div>
+          <div class="card"><b>Menys feina manual</b><span>Automatitzem tasques i connectem les eines que ja feu
+              servir.</span></div>
+          <div class="card"><b>Creix amb l'empresa</b><span>L'aplicació evoluciona amb els vostres processos.</span>
+          </div>
         </div>
+      </div>
+      <div class="solution-showcase" aria-label="Exemples d'aplicacions desenvolupades per doscientos">
+        <figure class="solution-shot">
+          <img src="https://doscientos.es/_astro/inicio.BwkMYSLg_ZJgUtn.webp"
+            alt="Panell principal de la plataforma de gestió de Kache Envíos" loading="lazy" decoding="async">
+          <figcaption>Kache Envíos · gestió operativa</figcaption>
+        </figure>
+        <figure class="solution-shot">
+          <img src="https://doscientos.es/_astro/dashboard.D_yQW51__AaJIo.webp"
+            alt="Dashboard del CRM d'Optinergia amb indicadors de clients i renovacions" loading="lazy"
+            decoding="async">
+          <figcaption>Optinergia · CRM de renovacions</figcaption>
+        </figure>
       </div>
     </section>
 

@@ -135,9 +135,10 @@
 
     .slide {
       min-height: 100svh;
-      max-width: 90rem;
+      width: 100%;
+      max-width: none;
       margin: auto;
-      padding: 6rem 2.5rem 8rem;
+      padding: 6rem max(2.5rem, calc((100% - 85rem)/2)) 8rem;
       flex-direction: column;
       justify-content: center;
       display: flex
@@ -148,34 +149,18 @@
     }
 
     .js .slide.on {
-      display: flex
+      display: flex;
+      animation: in .5s cubic-bezier(.22, 1, .36, 1) both
     }
 
-    .js .slide.on>* {
-      animation: arrive .55s cubic-bezier(.22, 1, .36, 1) both
+    .js .slide.on#mercat {
+      display: grid
     }
 
-    .js .slide.on>*:nth-child(2) {
-      animation-delay: .07s
-    }
-
-    .js .slide.on>*:nth-child(3) {
-      animation-delay: .14s
-    }
-
-    .js .slide.on>*:nth-child(4) {
-      animation-delay: .21s
-    }
-
-    @keyframes arrive {
+    @keyframes in {
       from {
         opacity: 0;
-        transform: translateY(14px)
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0)
+        transform: translateY(18px)
       }
     }
 
@@ -201,7 +186,7 @@
       max-width: 42rem;
       font-size: clamp(1.05rem, 1.6vw, 1.375rem);
       color: var(--dim);
-      text-wrap: pretty;
+      text-wrap: balance;
       line-height: 1.5
     }
 
@@ -277,11 +262,6 @@
       width: 11rem;
       height: 4rem;
       object-fit: contain
-    }
-
-    .client-logo.kache {
-      background: var(--bg);
-      color: #fff
     }
 
     .client-logo span {
@@ -781,7 +761,6 @@
     }
 
     .slide#mercat {
-      display: grid;
       grid-template-columns: minmax(0, .9fr) minmax(24rem, 1.1fr);
       align-content: center;
       align-items: center;
@@ -997,18 +976,16 @@
       background: linear-gradient(145deg, rgb(255 255 255/.075), rgb(255 255 255/.025) 74%)
     }
 
-    .slide#equip .card::before {
-      display: grid;
+    .slide#equip .team-photo {
+      display: block;
       width: 4rem;
       height: 4rem;
       margin-bottom: 1.5rem;
-      place-items: center;
       border: 1px solid rgb(195 255 120/.45);
       border-radius: 50%;
       background: rgb(195 255 120/.1);
-      color: var(--lime);
-      font-size: 1rem;
-      font-weight: 700
+      object-fit: cover;
+      object-position: center
     }
 
     .slide#equip .card b {
@@ -1024,14 +1001,6 @@
     .slide#equip .card:first-child {
       border-color: rgb(195 255 120/.32);
       background: linear-gradient(145deg, rgb(195 255 120/.12), rgb(255 255 255/.025) 72%)
-    }
-
-    .slide#equip .card:first-child::before {
-      content: "PG"
-    }
-
-    .slide#equip .card:nth-child(2)::before {
-      content: "GM"
     }
 
     .slide#tancament {
@@ -1079,15 +1048,7 @@
       background: #fff;
       color: var(--bg);
       text-align: center;
-      box-shadow: 0 24px 64px -20px rgb(0 0 0/.55);
-      transition: transform .25s cubic-bezier(.22, 1, .36, 1), box-shadow .25s
-    }
-
-    @media(hover:hover) {
-      .qr-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 32px 72px -20px rgb(0 0 0/.62)
-      }
+      box-shadow: 0 24px 64px -20px rgb(0 0 0/.55)
     }
 
     .qr-code {
@@ -1202,15 +1163,15 @@
     }
 
     @media(prefers-reduced-motion:reduce) {
-      .js .slide.on>* {
+      .js .slide.on {
         animation: none
       }
 
       .steps a::after,
-      .nb,
-      .qr-card {
+      .nb {
         transition: none
       }
+
     }
   </style>
 </head>
@@ -1239,14 +1200,14 @@
         sense adaptar el negoci a un programa genèric.</p>
       <div class="grid">
         <div class="card hl"><b>El vostre procés</b><span>Entenem com treballeu.</span></div>
-        <div class="card"><b>La vostra aplicació</b><span>Creem l’eina que necessiteu.</span></div>
+        <div class="card"><b>La vostra aplicació</b><span>Creem l'eina que necessiteu.</span></div>
         <div class="card"><b>Un equip proper</b><span>Parleu directament amb qui la crea.</span></div>
       </div>
     </section>
 
     <section class="slide" id="problema" data-label="Problema · client" data-nav-label="Problema"
       aria-labelledby="t-problema">
-      <h2 id="t-problema">El negoci creix. <em>L’Excel no creix amb ell.</em></h2>
+      <h2 id="t-problema">El negoci creix <em>L’Excel no creix amb ell</em></h2>
       <p class="lead">Clients, encàrrecs, equips i factures queden dispersos entre fulls de càlcul, missatges i
         programes
         que no encaixen amb la manera de treballar de l’empresa.</p>
@@ -1279,11 +1240,11 @@
       <div class="stats">
         <div class="stat hl"><b>+90</b><span>consultories realitzades</span></div>
         <div class="stat"><b>10</b><span>empreses ajudades</span></div>
-        <div class="stat"><b>4</b><span>clients amb manteniment mensual</span></div>
+        <div class="stat"><b>4</b><span>clients mensuals</span></div>
       </div>
       <p class="cap">Alguns dels nostres clients</p>
       <div class="grid client-logos" aria-label="Logotips d’empreses que hem ajudat">
-        <div class="client-logo kache"><img src="https://doscientos.es/_astro/logo-light.Ca_ppJMA_ZfXhJs.svg"
+        <div class="client-logo"><img src="https://doscientos.es/_astro/logo-light.Ca_ppJMA_ZfXhJs.svg"
             alt="Logotip de Kache Envíos" loading="lazy"><span>Kache Envíos</span></div>
         <div class="client-logo"><img src="https://doscientos.es/_astro/logo.2BUizJXV_Zdqhrv.svg" alt="Logotip de LEX"
             loading="lazy"><span>LEX</span></div>
@@ -1329,12 +1290,12 @@
     </section>
 
     <section class="slide" id="negoci" data-label="Model de negoci" data-nav-label="Model" aria-labelledby="t-negoci">
-      <h2 id="t-negoci">Cobrem per construir l’aplicació i per <em>mantenir-la útil</em></h2>
+      <h2 id="t-negoci">Cobrem per construir l'aplicació i per <em>mantenir-la útil</em></h2>
       <div class="business-model">
         <div class="business-main">
           <b>Projecte a mida</b>
-          <strong class="business-price">2–15 <small>k€</small></strong>
-          <span>Preu acordat segons l’abast.</span>
+          <strong class="business-price">2-15 <small>k€</small></strong>
+          <span>Preu acordat segons l'abast</span>
         </div>
         <div class="business-options">
           <div class="business-option">
@@ -1370,18 +1331,22 @@
     <section class="slide" id="equip" data-label="Equip" aria-labelledby="t-equip">
       <h2 id="t-equip">Qui crea l’aplicació i <em>us acompanya</em></h2>
       <div class="grid">
-        <div class="card hl"><b>Pol Gubau</b><span>Cofundador · lidera el desenvolupament, del plantejament a la posada
-            en marxa.</span></div>
-        <div class="card"><b>Gerard Martínez</b><span>Cofundador · entén les vostres necessitats, defineix la proposta i
-            us acompanya durant el projecte.</span></div>
+        <div class="card hl"><img class="team-photo" src="https://doscientos.es/_astro/pol.XgA-ESnN_1ssDkM.webp" alt=""
+            loading="lazy" decoding="async"><b>Pol Gubau</b><span>Lidera el desenvolupament, del
+            plantejament a la posada
+            en marxa</span></div>
+        <div class="card"><img class="team-photo" src="https://doscientos.es/_astro/gerard.1mMmhnGy_1NVxu1.webp" alt=""
+            loading="lazy" decoding="async"><b>Gerard Martínez</b><span>Entén les necessitats,
+            defineix la proposta i
+            us acompanya durant el projecte</span></div>
       </div>
     </section>
 
     <section class="slide" id="tancament" data-label="Parlem-ne" data-nav-label="Parlem" aria-labelledby="t-tancament">
       <div class="closing">
         <div class="closing-copy">
-          <h2 id="t-tancament">Si el vostre procés ja no cap en un Excel, <em>parlem-ne.</em></h2>
-          <p class="lead">Escanegeu el QR per conèixer millor què fem.</p>
+          <h2 id="t-tancament">Si el vostre procés ja no cap en un Excel, <em>parlem-ne</em></h2>
+          <p class="lead">Escanegeu el QR per conèixer millor com treballem</p>
           <a class="closing-contact" href="mailto:hola@doscientos.es">hola@doscientos.es</a>
         </div>
         <a class="qr-card" href="https://doscientos.es" target="_blank" rel="noopener"

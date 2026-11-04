@@ -1,0 +1,1255 @@
+<!doctype html>
+<html lang="ca" style="color-scheme: dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#2a4227">
+  <title>doscientos · Presentació</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
+  <script>document.documentElement.classList.add('js')</script>
+  <style>
+    :root {
+      --bg: #2a4227;
+      --lime: #bdff7b;
+      --line: rgb(255 255 255/.15);
+      --dim: rgb(255 255 255/.7)
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      background: var(--bg);
+      color: #fff;
+      font-family: Onest, ui-sans-serif, system-ui, sans-serif;
+      touch-action: manipulation;
+      -webkit-font-smoothing: antialiased
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(60rem 40rem at 85% -10%, rgb(190 242 100/.12), transparent 70%), radial-gradient(50rem 36rem at 0% 110%, rgb(190 242 100/.07), transparent 70%)
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--lime);
+      outline-offset: 4px;
+      border-radius: 6px
+    }
+
+    .skip {
+      position: fixed;
+      left: 1rem;
+      top: -4rem;
+      z-index: 50;
+      background: var(--lime);
+      color: var(--bg);
+      padding: .5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600
+    }
+
+    .skip:focus {
+      top: 1rem
+    }
+
+    header,
+    nav {
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 30
+    }
+
+    header {
+      top: 0;
+      background: linear-gradient(#2a4227b3, transparent)
+    }
+
+    nav {
+      bottom: 0;
+      border-top: 1px solid rgb(255 255 255/.1);
+      background: #2a4227e6;
+      backdrop-filter: blur(12px);
+      padding-bottom: env(safe-area-inset-bottom)
+    }
+
+    .bar {
+      max-width: 90rem;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 2.5rem
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      min-height: 44px;
+      font-size: 1.125rem;
+      font-weight: 600;
+      letter-spacing: -.01em
+    }
+
+    .brand svg {
+      height: 20px;
+      width: auto
+    }
+
+    .count {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--dim);
+      font-variant-numeric: tabular-nums
+    }
+
+    main {
+      position: relative;
+      z-index: 10
+    }
+
+    .slide {
+      min-height: 100svh;
+      max-width: 90rem;
+      margin: auto;
+      padding: 6rem 2.5rem 8rem;
+      flex-direction: column;
+      justify-content: center;
+      display: flex
+    }
+
+    .js .slide {
+      display: none
+    }
+
+    .js .slide.on {
+      display: flex;
+      animation: in .5s cubic-bezier(.22, 1, .36, 1) both
+    }
+
+    @keyframes in {
+      from {
+        opacity: 0;
+        transform: translateY(18px)
+      }
+    }
+
+    h1,
+    h2 {
+      max-width: 56rem;
+      font-weight: 600;
+      letter-spacing: -.03em;
+      line-height: 1.05;
+      text-wrap: balance;
+      font-size: clamp(2.4rem, 5.2vw, 4.75rem);
+      scroll-margin-top: 6rem
+    }
+
+    h1 em,
+    h2 em {
+      font-style: normal;
+      color: var(--lime)
+    }
+
+    .lead {
+      margin-top: 1.5rem;
+      max-width: 42rem;
+      font-size: clamp(1.05rem, 1.6vw, 1.375rem);
+      color: var(--dim);
+      text-wrap: pretty;
+      line-height: 1.5
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+      margin-top: 2.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))
+    }
+
+    .card {
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+      min-width: 0
+    }
+
+    .card.hl {
+      border-color: var(--lime)
+    }
+
+    .card b {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      margin-bottom: .4rem
+    }
+
+    .card span {
+      color: var(--dim);
+      line-height: 1.5;
+      font-size: 1rem
+    }
+
+    .num {
+      display: block;
+      font-size: clamp(2rem, 3.6vw, 3.25rem);
+      font-weight: 600;
+      letter-spacing: -.03em;
+      font-variant-numeric: tabular-nums;
+      color: var(--lime)
+    }
+
+    .card .num+span {
+      display: block;
+      margin-top: .35rem
+    }
+
+    .client-logos {
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      gap: .8rem;
+      margin-top: 1rem
+    }
+
+    .client-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .7rem;
+      min-height: 8rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: #171717;
+      text-align: center
+    }
+
+    .client-logo img {
+      display: block;
+      max-width: 100%;
+      width: 11rem;
+      height: 4rem;
+      object-fit: contain
+    }
+
+    .client-logo.kache {
+      background: var(--bg);
+      color: #fff
+    }
+
+    .client-logo span {
+      font-size: .85rem;
+      font-weight: 600
+    }
+
+    .split {
+      display: grid;
+      gap: 3rem;
+      grid-template-columns: 1fr 1fr;
+      align-items: center
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: .4rem .9rem;
+      font-size: .95rem;
+      color: var(--dim);
+      margin: 0 .5rem .5rem 0
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 2rem;
+      display: grid;
+      gap: .9rem;
+      max-width: 44rem
+    }
+
+    .list li {
+      padding-left: 1.6rem;
+      position: relative;
+      font-size: 1.2rem;
+      line-height: 1.45;
+      color: #ffffffd9
+    }
+
+    .list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .6em;
+      width: .7rem;
+      height: .7rem;
+      border-radius: 50%;
+      background: var(--lime)
+    }
+
+    .todo {
+      background: rgb(189 255 123/.14);
+      border: 1px dashed var(--lime);
+      border-radius: 6px;
+      padding: .05em .4em;
+      color: var(--lime);
+      font-weight: 500
+    }
+
+    .notes {
+      display: none;
+      margin-top: 2.5rem;
+      max-width: 48rem;
+      border-left: 2px solid var(--lime);
+      padding: .25rem 0 .25rem 1rem;
+      color: var(--dim);
+      font-size: 1rem;
+      line-height: 1.55
+    }
+
+    .show-notes .notes {
+      display: block
+    }
+
+    .steps {
+      list-style: none;
+      display: flex;
+      gap: .375rem;
+      flex: 1;
+      min-width: 0
+    }
+
+    .steps li {
+      flex: 1;
+      min-width: 0
+    }
+
+    .steps a {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      height: 44px;
+      padding-bottom: .75rem
+    }
+
+    .steps a::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background: rgb(255 255 255/.2);
+      transition: background-color .3s
+    }
+
+    .steps a.done::after {
+      background: var(--lime)
+    }
+
+    .steps a:hover::after {
+      background: #fff9
+    }
+
+    .steps a.done:hover::after {
+      background: var(--lime)
+    }
+
+    .steps small {
+      position: absolute;
+      inset: 6px 0 auto;
+      text-align: center;
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgb(255 255 255/.5);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .steps a[aria-current]>small {
+      color: #fff
+    }
+
+    .nb {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 44px;
+      gap: .5rem;
+      font-size: .9rem;
+      font-weight: 600;
+      color: rgb(255 255 255/.75);
+      transition: color .2s
+    }
+
+    .nb:hover {
+      color: var(--lime)
+    }
+
+    .nb[hidden] {
+      display: block;
+      visibility: hidden
+    }
+
+    .hint {
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgb(255 255 255/.4)
+    }
+
+    .shot {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #1a2018;
+      box-shadow: 0 24px 48px -16px rgb(0 0 0/.6)
+    }
+
+    .mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem
+    }
+
+    .mosaic .shot:first-child {
+      grid-row: span 2;
+      aspect-ratio: auto;
+      height: 100%
+    }
+
+    .strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: .75rem;
+      margin-top: 2rem
+    }
+
+    .strip .shot {
+      aspect-ratio: 4/3;
+      border-radius: 10px
+    }
+
+    .when {
+      display: block;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: .6rem
+    }
+
+    .person {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start
+    }
+
+    .face {
+      width: 9rem;
+      height: 9rem;
+      flex: none;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 1px solid var(--line)
+    }
+
+    .bars {
+      list-style: none;
+      display: flex;
+      align-items: flex-end;
+      gap: .75rem;
+      height: 16rem;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .bars li {
+      flex: 1;
+      min-width: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: center;
+      font-size: .85rem;
+      color: var(--dim);
+      font-variant-numeric: tabular-nums
+    }
+
+    .bars i {
+      display: block;
+      background: var(--lime);
+      border-radius: 6px 6px 0 0;
+      margin-top: .4rem
+    }
+
+    .months {
+      list-style: none;
+      display: flex;
+      gap: .75rem;
+      margin-top: .5rem
+    }
+
+    .months li {
+      flex: 1;
+      text-align: center;
+      font-size: .8rem;
+      color: rgb(255 255 255/.55)
+    }
+
+    .total {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 600;
+      letter-spacing: -.03em;
+      font-variant-numeric: tabular-nums;
+      line-height: 1
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem
+    }
+
+    .stat {
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+      min-width: 0
+    }
+
+    .stat.hl {
+      border-color: var(--lime)
+    }
+
+    .stat b {
+      display: block;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 600;
+      letter-spacing: -.03em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums
+    }
+
+    .stat.hl b {
+      color: var(--lime)
+    }
+
+    .stat span {
+      display: block;
+      margin-top: .6rem;
+      color: var(--dim);
+      font-size: 1.1rem
+    }
+
+    .seg {
+      display: flex;
+      gap: .4rem;
+      margin-top: 1rem;
+      height: 5rem
+    }
+
+    .seg div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 1rem;
+      border-radius: 12px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      min-width: 0;
+      font-variant-numeric: tabular-nums
+    }
+
+    .seg small {
+      font-size: .85rem;
+      font-weight: 500;
+      opacity: .85
+    }
+
+    .x {
+      display: block;
+      font-size: 2.75rem;
+      line-height: 1;
+      color: #ff8a8a;
+      margin-bottom: .75rem
+    }
+
+    .cap {
+      margin-top: 2rem;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--dim)
+    }
+
+    .tblwrap {
+      overflow-x: auto;
+      margin-top: 2rem
+    }
+
+    .tbl {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.15rem
+    }
+
+    .tbl th,
+    .tbl td {
+      padding: 1rem .75rem;
+      text-align: center;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .tbl th:first-child,
+    .tbl td:first-child {
+      text-align: left;
+      font-weight: 500
+    }
+
+    .tbl thead th {
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      font-weight: 600
+    }
+
+    .tbl .us {
+      background: rgb(189 255 123/.1);
+      color: var(--lime)
+    }
+
+    .yes,
+    .no {
+      font-size: 1.6rem;
+      line-height: 1
+    }
+
+    .yes {
+      color: var(--lime)
+    }
+
+    .no {
+      color: rgb(255 255 255/.35)
+    }
+
+    .prog {
+      height: .5rem;
+      border-radius: 99px;
+      background: rgb(255 255 255/.15);
+      margin-top: .9rem;
+      overflow: hidden
+    }
+
+    .prog i {
+      display: block;
+      height: 100%;
+      background: var(--lime)
+    }
+
+    .slide#portada {
+      align-items: flex-start;
+      background: radial-gradient(ellipse at 82% 62%, rgb(189 255 123/.12), transparent 42%)
+    }
+
+    .slide#portada h1 {
+      max-width: 70rem;
+      font-size: clamp(3rem, 7vw, 6.5rem)
+    }
+
+    .slide#portada .grid {
+      width: 100%;
+      margin-top: 4rem
+    }
+
+    .slide#portada .card {
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgb(255 255 255/.035)
+    }
+
+    .slide#problema {
+      background: linear-gradient(135deg, rgb(255 255 255/.045), transparent 62%)
+    }
+
+    .slide#problema h2 {
+      max-width: 46rem
+    }
+
+    .slide#solucio .grid {
+      gap: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px
+    }
+
+    .slide#solucio .card {
+      padding: 1.5rem;
+      border: 0;
+      border-right: 1px solid var(--line)
+    }
+
+    .slide#solucio .card:last-child {
+      border-right: 0
+    }
+
+    .slide#solucio .card.hl {
+      background: var(--lime);
+      color: var(--bg)
+    }
+
+    .slide#solucio .card.hl span {
+      color: rgb(42 66 39/.8)
+    }
+
+    .slide#validacio {
+      background: radial-gradient(ellipse at 50% 42%, rgb(189 255 123/.08), transparent 55%)
+    }
+
+    .slide#validacio .stats {
+      gap: 2rem;
+      margin-top: 3rem
+    }
+
+    .slide#validacio .stat {
+      border-top: 0;
+      border-left: 1px solid var(--line);
+      padding: .25rem 0 .25rem 1.25rem
+    }
+
+    .slide#validacio .stat.hl {
+      border-left: 2px solid var(--lime)
+    }
+
+    .slide#competencia .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch
+    }
+
+    .slide#competencia .card {
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgb(255 255 255/.035)
+    }
+
+    .slide#competencia .card.hl {
+      border-color: var(--lime);
+      background: rgb(189 255 123/.1)
+    }
+
+    .slide#mercat {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(18rem, .9fr);
+      align-content: center;
+      align-items: center;
+      gap: 1rem 3rem
+    }
+
+    .slide#mercat h2 {
+      grid-column: 1 / -1
+    }
+
+    .slide#mercat .lead {
+      align-self: start
+    }
+
+    .slide#mercat .grid {
+      grid-column: 2;
+      grid-row: 2 / span 2;
+      grid-template-columns: 1fr;
+      gap: .5rem;
+      margin: 0
+    }
+
+    .slide#mercat .card {
+      padding: .75rem 1rem;
+      border: 0;
+      border-left: 2px solid var(--line)
+    }
+
+    .slide#mercat .card.hl {
+      border-color: var(--lime);
+      background: linear-gradient(90deg, rgb(189 255 123/.1), transparent)
+    }
+
+    .slide#mercat .notes {
+      grid-column: 1 / -1
+    }
+
+    .slide#negoci .grid {
+      grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr));
+      align-items: stretch
+    }
+
+    .slide#negoci .card {
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: 16px
+    }
+
+    .slide#negoci .card.hl {
+      border-color: var(--lime);
+      background: rgb(189 255 123/.09)
+    }
+
+    .slide#fites .grid {
+      counter-reset: fites;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 2rem;
+      row-gap: 1rem
+    }
+
+    .slide#fites .card {
+      position: relative;
+      min-height: 8rem;
+      padding: .5rem 0 1rem 3.5rem;
+      border-top: 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .slide#fites .card::before {
+      counter-increment: fites;
+      content: "0" counter(fites);
+      position: absolute;
+      left: 0;
+      top: .1rem;
+      color: var(--lime);
+      font-size: 1rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums
+    }
+
+    .slide#equip .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem
+    }
+
+    .slide#equip .card {
+      min-height: 14rem;
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgb(255 255 255/.035)
+    }
+
+    .slide#equip .card::before {
+      display: grid;
+      width: 3.5rem;
+      height: 3.5rem;
+      margin-bottom: 1.25rem;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--lime);
+      font-size: 1.1rem;
+      font-weight: 700
+    }
+
+    .slide#equip .card:first-child::before {
+      content: "PG"
+    }
+
+    .slide#equip .card:nth-child(2)::before {
+      content: "GM"
+    }
+
+    .slide#tancament {
+      background: radial-gradient(ellipse at 78% 50%, rgb(189 255 123/.12), transparent 42%)
+    }
+
+    .closing {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem);
+      align-items: center;
+      gap: clamp(2rem, 6vw, 6rem);
+      width: 100%;
+      max-width: 76rem;
+      margin: auto
+    }
+
+    .closing h2 {
+      max-width: 54rem;
+      font-size: clamp(3rem, 6vw, 5.5rem)
+    }
+
+    .closing .lead {
+      margin-top: 1.25rem
+    }
+
+    .closing-contact {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--lime);
+      font-size: 1.15rem;
+      font-weight: 600
+    }
+
+    .closing-contact:hover {
+      text-decoration: underline
+    }
+
+    .qr-card {
+      display: grid;
+      justify-items: center;
+      gap: 1rem;
+      width: 100%;
+      padding: 1.5rem;
+      border-radius: 22px;
+      background: #fff;
+      color: var(--bg);
+      text-align: center;
+      box-shadow: 0 24px 64px -20px rgb(0 0 0/.55)
+    }
+
+    .qr-code {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain
+    }
+
+    .qr-card span {
+      font-size: 1rem;
+      font-weight: 700
+    }
+
+    @media(max-width:900px) {
+      .split {
+        grid-template-columns: 1fr
+      }
+
+      .slide#mercat {
+        display: flex
+      }
+
+      .slide#mercat .grid {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        margin-top: 1.5rem
+      }
+
+      .strip {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .person {
+        flex-direction: column
+      }
+
+      .steps small,
+      .hint {
+        display: none
+      }
+
+      .bar,
+      .slide {
+        padding-inline: 1.5rem
+      }
+
+      .slide#solucio .grid {
+        gap: 1rem;
+        overflow: visible;
+        border: 0
+      }
+
+      .slide#solucio .card {
+        border: 1px solid var(--line);
+        border-radius: 14px
+      }
+
+      .slide#competencia .grid,
+      .slide#negoci .grid {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))
+      }
+
+      .slide#fites .grid,
+      .slide#equip .grid {
+        grid-template-columns: 1fr
+      }
+
+      .closing {
+        grid-template-columns: 1fr;
+        gap: 2rem
+      }
+
+      .qr-card {
+        max-width: 22rem
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .js .slide.on {
+        animation: none
+      }
+
+      .steps a::after,
+      .nb {
+        transition: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Salta al contingut</a>
+  <header>
+    <div class="bar">
+      <a class="brand" href="#portada" aria-label="doscientos: ves a la portada">
+        <svg aria-hidden="true" viewBox="0 0 749 264" fill="#bdff7b">
+          <path
+            d="M40.01 0C74.94 0 108.44 13.88 133.15 38.58 157.85 63.28 171.72 96.78 171.72 131.71c0 34.93-13.88 68.43-38.58 93.13-24.7 24.7-58.2 38.58-93.13 38.58H0V0h40.01Z" />
+          <circle cx="328.44" cy="131.71" r="131.71" />
+          <circle cx="616.87" cy="131.71" r="131.71" />
+        </svg>
+        <span translate="no">doscientos</span>
+      </a>
+      <span class="count" aria-live="polite"><span id="counter">01 / 10</span></span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="slide" id="portada" data-label="Portada" aria-labelledby="t-portada">
+      <h1 id="t-portada">Creem eines digitals perquè <em>facturis més i treballis menys</em></h1>
+      <p class="lead">Convertim processos complexos en eines clares: un sol lloc per gestionar la feina, connectar la
+        informació i créixer sense forçar el negoci dins d’un programa genèric.</p>
+      <div class="grid">
+        <div class="card hl"><b>El vostre procés</b><span>Entenem com treballeu de debò.</span></div>
+        <div class="card"><b>La vostra aplicació</b><span>Construïm les funcions que necessiteu.</span></div>
+        <div class="card"><b>Un equip proper</b><span>Parleu amb qui dissenya i programa.</span></div>
+      </div>
+      <p class="notes"><b>Obertura.</b> Som Pol i Gerard. A doscientos fem programari a mida per a empreses amb
+        processos que han superat les eines genèriques.</p>
+    </section>
+
+    <section class="slide" id="problema" data-label="Problema · client" aria-labelledby="t-problema">
+      <h2 id="t-problema">El negoci creix. <em>L’Excel no creix amb ell.</em></h2>
+      <p class="lead">Empreses de serveis amb clients, encàrrecs, equips i factures repartits entre fulls de càlcul,
+        missatges i programes que no encaixen amb el seu procés.</p>
+      <div class="grid">
+        <div class="card"><b>Informació dispersa</b><span>Ningú no té una visió completa de l’estat de cada
+            feina.</span></div>
+        <div class="card"><b>Tasques duplicades</b><span>Les mateixes dades s’entren diverses vegades i apareixen
+            errors.</span></div>
+        <div class="card"><b>Programari rígid</b><span>L’equip ha d’adaptar la feina a una eina pensada per a
+            tothom.</span></div>
+      </div>
+      <p class="notes"><b>Client.</b> Pimes i empreses de serveis amb un procés propi que ja no poden coordinar amb
+        eines separades.</p>
+    </section>
+
+    <section class="slide" id="solucio" data-label="Solució · valor" aria-labelledby="t-solucio">
+      <h2 id="t-solucio">Una aplicació que s’adapta <em>al negoci</em></h2>
+      <p class="lead">Dissenyem i desenvolupem sistemes interns a mida: des d’un CRM propi fins a eines per coordinar
+        operacions, rutes, serveis o facturació.</p>
+      <div class="grid">
+        <div class="card hl"><b>Tot en un lloc</b><span>Clients, feines i informació compartida en un flux de treball
+            clar.</span></div>
+        <div class="card"><b>Menys feina manual</b><span>Automatitzem passos repetitius i connectem les eines
+            existents.</span></div>
+        <div class="card"><b>Creix amb l’empresa</b><span>La solució pot evolucionar quan canvien els processos.</span>
+        </div>
+      </div>
+      <p class="notes"><b>Proposta.</b> El nostre producte principal són aplicacions a mida. Les automatitzacions i les
+        webs complementen aquesta feina.</p>
+    </section>
+
+    <section class="slide" id="validacio" data-label="Validació i avenços" aria-labelledby="t-validacio">
+      <h2 id="t-validacio">Més de 90 consultories i <em>empreses que continuen confiant en nosaltres</em></h2>
+      <p class="lead">Escoltem cada negoci, detectem on es perd temps i l’ajudem a trobar una solució digital que
+        encaixi amb la seva manera de treballar.</p>
+      <div class="stats">
+        <div class="stat hl"><b>+90</b><span>consultories per entendre reptes reals</span></div>
+        <div class="stat"><b>10</b><span>empreses que hem ajudat</span></div>
+        <div class="stat"><b>4</b><span>clients que continuen amb manteniment mensual</span></div>
+      </div>
+      <p class="cap">Algunes de les empreses que hem ajudat</p>
+      <div class="grid client-logos" aria-label="Logotips d’empreses que hem ajudat">
+        <div class="client-logo kache"><img src="https://doscientos.es/_astro/logo-light.Ca_ppJMA_ZfXhJs.svg"
+            alt="Logotip de Kache Envíos" loading="lazy"><span>Kache Envíos</span></div>
+        <div class="client-logo"><img src="https://doscientos.es/_astro/logo.2BUizJXV_Zdqhrv.svg" alt="Logotip de LEX"
+            loading="lazy"><span>LEX</span></div>
+        <div class="client-logo"><img src="https://doscientos.es/_astro/logo.DSGsLZx7_ZfXhJs.svg"
+            alt="Logotip d’Optinergia" loading="lazy"><span>Optinergia</span></div>
+        <div class="client-logo"><img src="https://doscientos.es/_astro/logo.ZNeqG-kl_C1ChP.webp"
+            alt="Logotip de Grúas del Vallès" loading="lazy"><span>Grúas del Vallès</span></div>
+        <div class="client-logo"><img src="https://doscientos.es/_astro/logo.B2rCJlCJ_ZvLVfX.webp"
+            alt="Logotip de Salvadis" loading="lazy"><span>Salvadis</span></div>
+      </div>
+      <p class="hint" style="margin-top:1.5rem;text-transform:none;letter-spacing:0">Dades de la presentació original, a
+        14 d’octubre de 2026.</p>
+      <p class="notes"><b>Aprenentatge.</b> Les consultories ens han ensenyat que cal entendre el procés abans
+        d’escriure codi. Els quatre clients amb manteniment mostren una relació que continua després del lliurament.
+        Actualitzar aquestes xifres abans de presentar.</p>
+    </section>
+
+    <section class="slide" id="competencia" data-label="Diferenciació" aria-labelledby="t-competencia">
+      <h2 id="t-competencia">Un equip petit i proper per ajudar <em>les pimes a créixer</em></h2>
+      <div class="grid">
+        <div class="card"><b>Menys intermediaris</b><span>En una empresa gran pots acabar parlant amb comercials,
+            gestors i desenvolupadors diferents. Amb nosaltres, saps qui porta el teu projecte.</span></div>
+        <div class="card"><b>Una estructura lleugera</b><span>Els equips grans tenen més capes de coordinació que poden
+            encarir el projecte. Nosaltres ajustem l’abast a allò que la teva empresa necessita ara.</span></div>
+        <div class="card hl"><b>Implicació directa</b><span>Gerard entén el teu negoci i t’acompanya; Pol lidera la
+            construcció de l’aplicació. Treballem junts perquè la solució t’ajudi a avançar.</span></div>
+      </div>
+      <p class="lead">Volem ser el soci tecnològic proper que acompanya les petites empreses mentre creixen.</p>
+      <p class="notes"><b>Diferenciació.</b> Les empreses grans poden tenir més interlocutors i una estructura que
+        encareix els projectes. Nosaltres oferim contacte directe amb els fundadors, una proposta ajustada a cada etapa
+        i acompanyament proper.</p>
+    </section>
+
+    <section class="slide" id="mercat" data-label="Màrqueting i mercat" aria-labelledby="t-mercat">
+      <h2 id="t-mercat">Vam començar a tot Espanya. Ara creixem <em>des de la proximitat</em></h2>
+      <p class="lead">Ja tenim els primers clients. Aquestes experiències ens han fet veure que la relació propera i el
+        contacte directe són especialment importants per a ells.</p>
+      <div class="grid">
+        <div class="card"><b>Punt de partida</b><span>Vam sortir al mercat oferint els nostres serveis a empreses de tot
+            Espanya.</span></div>
+        <div class="card hl"><b>El que hem après</b><span>Els clients valoren poder parlar amb nosaltres, sentir-se
+            escoltats i tenir algú a prop durant el projecte.</span></div>
+        <div class="card"><b>Focus actual</b><span>Concentrem l’esforç comercial al Maresme i, des d’aquí, a la resta de
+            Catalunya.</span></div>
+      </div>
+      <p class="notes"><b>Estratègia.</b> Vam començar amb un abast estatal i ja tenim clients. La proximitat ha
+        resultat ser un factor important, per això ara prioritzem el Maresme i Catalunya. Si la convocatòria exigeix una
+        xifra de volum de mercat, cal afegir-la amb una font verificable.</p>
+    </section>
+
+    <section class="slide" id="negoci" data-label="Model de negoci" aria-labelledby="t-negoci">
+      <h2 id="t-negoci">Cobrem per construir l’aplicació i per <em>mantenir-la útil</em></h2>
+      <div class="grid">
+        <div class="card hl"><b>Projecte a mida</b><span>Abast i preu acordats abans de desenvolupar. Entre 2 i
+            15&nbsp;k€ segons el projecte.</span></div>
+        <div class="card"><b>Manteniment</b><span>Suport, ajustos i evolució després de la posada en marxa. Referència
+            original: des de 29&nbsp;€/mes.</span></div>
+        <div class="card"><b>Producte propi</b><span>Ábaco, plantejat com a línia de subscripció.</span></div>
+      </div>
+      <p class="lead">El pagament dels projectes es divideix en fites, vinculades a avenços visibles.</p>
+      <p class="notes"><b>Model.</b> La línia principal són projectes d’aplicacions a mida. Revisar preus i estat
+        d’Ábaco abans d’usar la presentació comercialment.</p>
+    </section>
+
+    <section class="slide" id="fites" data-label="Properes fites" aria-labelledby="t-fites">
+      <h2 id="t-fites">Fer repetible el procés de crear <em>aplicacions que resolen problemes reals</em></h2>
+      <div class="grid">
+        <div class="card hl"><b>Millorar el diagnòstic</b><span>Identificar abans quin procés aporta més valor quan es
+            digitalitza.</span></div>
+        <div class="card"><b>Mostrar resultats</b><span>Documentar casos amb el problema, la solució i l’efecte en el
+            dia a dia.</span></div>
+        <div class="card"><b>Ampliar continuïtat</b><span>Fer créixer la base de clients amb suport i evolució de les
+            seves aplicacions.</span></div>
+        <div class="card"><b>Consolidar producte</b><span>Validar Ábaco amb clients recurrents.</span></div>
+      </div>
+      <p class="notes"><b>Fites.</b> Si el jurat exigeix dates i números, recuperar objectius actualitzats i verificats
+        abans de presentar.</p>
+    </section>
+
+    <section class="slide" id="equip" data-label="Equip" aria-labelledby="t-equip">
+      <h2 id="t-equip">Qui construeix l’aplicació i qui <em>us acompanya en tot el procés</em></h2>
+      <div class="grid">
+        <div class="card hl"><b>Pol Gubau</b><span>Cofundador · lidera la part tècnica i tot el procés de creació de
+            l’aplicació, des del plantejament fins a la posada en marxa.</span></div>
+        <div class="card"><b>Gerard Martínez</b><span>Cofundador · escolta les vostres necessitats, proposa la solució
+            més adequada i us acompanya durant el projecte perquè l’experiència sigui clara i propera.</span></div>
+      </div>
+      <p class="notes"><b>Tancament.</b> Pol lidera la construcció tècnica de l’aplicació. Gerard és el contacte
+        comercial i acompanya el client des de la primera conversa fins al lliurament, amb coneixement tècnic per
+        orientar la proposta.</p>
+    </section>
+
+    <section class="slide" id="tancament" data-label="Parlem-ne" aria-labelledby="t-tancament">
+      <div class="closing">
+        <div class="closing-copy">
+          <h2 id="t-tancament">Si el vostre procés ja no cap en un Excel, <em>parlem-ne.</em></h2>
+          <p class="lead">Escanegeu el codi per descobrir com us podem ajudar.</p>
+          <a class="closing-contact" href="mailto:hola@doscientos.es">hola@doscientos.es</a>
+        </div>
+        <a class="qr-card" href="https://doscientos.es" target="_blank" rel="noopener"
+          aria-label="Obrir doscientos.es en una pestanya nova">
+          <img class="qr-code"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=640x640&amp;format=svg&amp;qzone=4&amp;data=https%3A%2F%2Fdoscientos.es"
+            alt="Codi QR per visitar doscientos.es">
+          <span>doscientos.es</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <nav aria-label="Progrés de la presentació">
+    <div class="bar">
+      <a class="nb" id="prev" href="#portada" aria-label="Anterior"><span
+          aria-hidden="true">←</span><span>Anterior</span></a>
+      <ol class="steps" id="steps"></ol>
+      <span class="hint">← → Navegar · N notes</span>
+      <a class="nb" id="next" href="#problema" aria-label="Següent"><span>Següent</span><span
+          aria-hidden="true">→</span></a>
+    </div>
+  </nav>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')], steps = document.getElementById('steps');
+    const counter = document.getElementById('counter'), prev = document.getElementById('prev'), next = document.getElementById('next');
+    const pad = n => String(n).padStart(2, '0');
+    slides.forEach((s, i) => steps.insertAdjacentHTML('beforeend', `<li><a href="#${s.id}" aria-label="Ves a la diapositiva ${i + 1}: ${s.dataset.label}"><small>${s.dataset.label}</small></a></li>`));
+    const links = [...steps.querySelectorAll('a')];
+    function show() {
+      let i = slides.findIndex(s => s.id === decodeURIComponent(location.hash.slice(1))); if (i < 0) i = 0;
+      slides.forEach((s, k) => s.classList.toggle('on', k === i));
+      links.forEach((a, k) => { a.classList.toggle('done', k <= i); k === i ? a.setAttribute('aria-current', 'step') : a.removeAttribute('aria-current') });
+      counter.textContent = `${pad(i + 1)} / ${pad(slides.length)}`;
+      document.title = `${slides[i].dataset.label} · doscientos`;
+      prev.hidden = i === 0; prev.href = '#' + slides[Math.max(i - 1, 0)].id;
+      next.hidden = i === slides.length - 1; next.href = '#' + slides[Math.min(i + 1, slides.length - 1)].id;
+      scrollTo({ top: 0 });
+    }
+    addEventListener('hashchange', show); show();
+    addEventListener('keydown', e => {
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      const i = slides.findIndex(s => s.classList.contains('on')); let n = null;
+      if (['ArrowRight', 'PageDown', ' '].includes(e.key)) n = i + 1;
+      if (['ArrowLeft', 'PageUp'].includes(e.key)) n = i - 1;
+      if (e.key === 'Home') n = 0; if (e.key === 'End') n = slides.length - 1;
+      if (e.key.toLowerCase() === 'n') document.body.classList.toggle('show-notes');
+      if (n !== null && n >= 0 && n < slides.length) { e.preventDefault(); location.hash = slides[n].id }
+    });
+  </script>
+</body>
+
+</html>

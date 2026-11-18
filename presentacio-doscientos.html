@@ -833,6 +833,56 @@
         padding-top: 0.5rem;
       }
 
+      .comparison {
+        width: 100%;
+        max-width: 70rem;
+        margin-top: 2rem;
+        border-collapse: collapse;
+        table-layout: fixed;
+        font-size: clamp(0.8rem, 1.2vw, 1rem);
+        line-height: 1.45;
+        text-align: left;
+      }
+
+      .comparison th,
+      .comparison td {
+        padding: 0.9rem 0.75rem;
+        border-bottom: 1px solid var(--line);
+        overflow-wrap: anywhere;
+        vertical-align: top;
+      }
+
+      .comparison th:first-child {
+        width: 24%;
+        padding-left: 0;
+      }
+
+      .comparison thead th {
+        color: var(--dim);
+      }
+
+      .comparison thead th:last-child {
+        color: var(--lime);
+      }
+
+      .comparison td {
+        color: var(--dim);
+      }
+
+      .comparison-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        margin-top: 1rem;
+        color: var(--lime);
+        font-weight: 600;
+      }
+
+      .comparison-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+      }
+
       .slide#competencia .grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: stretch;
@@ -1307,8 +1357,8 @@
       <section class="slide" id="portada" data-label="Portada" aria-labelledby="t-portada">
         <h1 id="t-portada">Creem eines digitals perquè <em>facturis més i treballis menys</em></h1>
         <p class="lead">
-          Convertim processos complexos en aplicacions clares: tota la feina i la informació en un
-          sol lloc, sense adaptar el negoci a un programa genèric
+          Convertim processos complexos en <strong>aplicacions clares</strong>: tota la informació
+          en un sol lloc, sense adaptar el negoci a un programa genèric
         </p>
       </section>
 
@@ -1513,12 +1563,59 @@
 
       <section
         class="slide"
+        id="kache"
+        data-label="Kache Envíos"
+        data-nav-label="Kache"
+        aria-labelledby="t-kache"
+      >
+        <h2 id="t-kache">Kache Envíos: <em>menys passos, més temps</em></h2>
+        <p class="lead">Una operació que passa d'informació dispersa a una eina compartida.</p>
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th scope="col">Tasques</th>
+              <th scope="col">Abans</th>
+              <th scope="col">Amb la plataforma</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Sol·licituds</th>
+              <td>Informació entre missatges, fulls i documents.</td>
+              <td>Clients, mascotes i sol·licituds en un mateix lloc.</td>
+            </tr>
+            <tr>
+              <th scope="row">Rutes</th>
+              <td>Coordinació amb informació repartida.</td>
+              <td>Rutes i plantilles organitzades en una sola eina.</td>
+            </tr>
+            <tr>
+              <th scope="row">Documents i factures</th>
+              <td>Documents i gestions en eines separades.</td>
+              <td>Documents i factures vinculats a cada servei.</td>
+            </tr>
+            <tr>
+              <th scope="row">Seguiment</th>
+              <td>Consultes i actualitzacions per missatge.</td>
+              <td>El client consulta les sol·licituds i rep actualitzacions.</td>
+            </tr>
+          </tbody>
+        </table>
+        <a class="comparison-link" href="https://doscientos.es/projects/kache-envios">
+          Veure el projecte de Kache Envíos <span aria-hidden="true">&nbsp;→</span>
+        </a>
+      </section>
+
+      <section
+        class="slide"
         id="competencia"
         data-label="Diferenciació"
         data-nav-label="Tracte"
         aria-labelledby="t-competencia"
       >
-        <h2 id="t-competencia">Un equip petit i proper per ajudar <em>les pimes a créixer</em></h2>
+        <h2 id="t-competencia">
+          Un equip petit i proper per ajudar <em>autònoms i petites empreses a créixer</em>
+        </h2>
         <div class="grid">
           <div class="card">
             <b>Menys intermediaris</b

@@ -792,6 +792,7 @@
       }
 
       .slide#validacio .stats {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
         gap: 2rem;
         margin-top: 3rem;
       }
@@ -804,6 +805,11 @@
 
       .slide#validacio .stat.hl {
         border-left: 2px solid var(--lime);
+      }
+
+      .slide#validacio .stat b {
+        font-size: clamp(2rem, 4vw, 4.25rem);
+        overflow-wrap: anywhere;
       }
 
       .results-grid {
@@ -826,6 +832,13 @@
         font-size: clamp(1.25rem, 2vw, 1.65rem);
         line-height: 1.2;
         text-wrap: balance;
+      }
+
+      .result-card .result-proof {
+        color: var(--lime);
+        font-size: 1rem;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
       }
 
       .result-card .case-cta {
@@ -867,6 +880,30 @@
 
       .comparison td {
         color: var(--dim);
+      }
+
+      .slide#kache .comparison td {
+        font-size: clamp(1.1rem, 2vw, 1.5rem);
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .slide#kache .comparison td:last-child {
+        color: var(--lime);
+      }
+
+      .kache-saving {
+        margin-top: 1.5rem;
+        color: var(--lime);
+        font-size: clamp(1.2rem, 2vw, 1.75rem);
+        font-weight: 600;
+      }
+
+      .kache-note {
+        margin-top: 0.5rem;
+        color: var(--dim);
+        font-size: 0.85rem;
+        line-height: 1.4;
       }
 
       .comparison-link {
@@ -1372,10 +1409,10 @@
 
     <main id="main">
       <section class="slide" id="portada" data-label="Portada" aria-labelledby="t-portada">
-        <h1 id="t-portada">Creem eines digitals perquè <em>facturis més i treballis menys</em></h1>
+        <h1 id="t-portada">Menys feina administrativa. <em>Més temps per al teu negoci.</em></h1>
         <p class="lead">
-          Convertim processos complexos en <strong>aplicacions clares</strong>: tota la informació
-          en un sol lloc, sense adaptar el negoci a un programa genèric
+          Creem aplicacions i automatitzacions per a autònoms i petites empreses que volen treballar
+          amb més ordre i menys tasques repetitives.
         </p>
       </section>
 
@@ -1386,22 +1423,23 @@
         data-nav-label="Problema"
         aria-labelledby="t-problema"
       >
-        <h2 id="t-problema">El negoci creix <em>L'Excel no creix amb ell</em></h2>
+        <h2 id="t-problema">Et sona alguna <em>d'aquestes situacions?</em></h2>
         <p class="lead">
-          Clients, encàrrecs, equips i factures queden dispersos entre fulls de càlcul, missatges i
-          programes que no encaixen amb la manera de treballar de l'empresa.
+          Quan la informació està entre missatges, fulls de càlcul i programes diferents, cada feina
+          demana més temps del necessari.
         </p>
         <div class="grid">
           <div class="card">
-            <b>Informació dispersa</b><span>Costa saber en quin punt és cada feina.</span>
+            <b>On és el pressupost?</b
+            ><span>Busques entre correus i missatges per trobar l'última versió.</span>
           </div>
           <div class="card">
-            <b>Tasques duplicades</b
-            ><span>Reintroduir dades fa perdre temps i provoca errors.</span>
+            <b>Qui fa la visita?</b
+            ><span>La informació del client i l'agenda no estan al mateix lloc.</span>
           </div>
           <div class="card">
-            <b>Programari rígid</b
-            ><span>L'empresa acaba adaptant-se a l'eina, no a l'inrevés.</span>
+            <b>Què falta per cobrar?</b
+            ><span>Has de revisar factures i converses per saber què queda pendent.</span>
           </div>
         </div>
       </section>
@@ -1414,26 +1452,27 @@
         aria-labelledby="t-solucio"
       >
         <div class="solution-copy">
-          <h2 id="t-solucio">Una aplicació que s'adapta <em>al negoci</em></h2>
+          <h2 id="t-solucio">La teva feina, <em>més fàcil de gestionar</em></h2>
           <p class="lead">
-            Creem aplicacions a mida: CRM i eines per coordinar operacions, rutes, serveis o
-            facturació.
+            Des d'un CRM fins a una eina per coordinar serveis, rutes o factures: construïm el que
+            necessita el teu negoci.
           </p>
           <div class="grid">
             <a class="card hl case-link" href="https://doscientos.es/projects/lex-crm">
-              <b>Tot en un lloc</b><span>Clients, feines i informació en un flux clar.</span>
+              <b>Troba la informació</b
+              ><span>Clients, expedients i documents en un mateix lloc.</span>
               <span class="case-cta">Veure el cas de LEX <span aria-hidden="true">→</span></span>
             </a>
             <a class="card case-link" href="https://doscientos.es/projects/optinergia">
-              <b>Menys feina manual</b
-              ><span>Automatitzem tasques i connectem les eines que ja feu servir.</span>
+              <b>Anticipa't</b
+              ><span>Detecta els contractes que vencen i prioritza les renovacions.</span>
               <span class="case-cta"
                 >Veure el cas d'Optinergia <span aria-hidden="true">→</span></span
               >
             </a>
             <a class="card case-link" href="https://doscientos.es/projects/kache-envios">
-              <b>Creix amb l'empresa</b
-              ><span>L'aplicació evoluciona amb els vostres processos.</span>
+              <b>Coordina cada servei</b
+              ><span>Organitza sol·licituds, rutes i documents en una sola eina.</span>
               <span class="case-cta"
                 >Veure el cas de Kache Envíos <span aria-hidden="true">→</span></span
               >
@@ -1476,16 +1515,18 @@
       <section
         class="slide"
         id="validacio"
-        data-label="Validació i avenços"
-        data-nav-label="Clients"
+        data-label="Experiència i clients"
+        data-nav-label="Experiència"
         aria-labelledby="t-validacio"
       >
-        <h2 id="t-validacio">De la primera conversa <em>a una relació que continua</em></h2>
-        <p class="lead">Entenem cada negoci abans de proposar una solució digital.</p>
+        <h2 id="t-validacio">Experiència real, <em>solucions per al teu dia a dia</em></h2>
+        <p class="lead">Ja hem ajudat negocis diferents a convertir processos en eines útils.</p>
         <div class="stats">
-          <div class="stat hl"><b>+90</b><span>consultories realitzades</span></div>
-          <div class="stat"><b>10</b><span>empreses ajudades</span></div>
-          <div class="stat"><b>4</b><span>clients mensuals</span></div>
+          <div class="stat hl"><b>+15</b><span>empreses a qui hem ajudat</span></div>
+          <div class="stat">
+            <b>+200.000</b><span>usuaris d'aplicacions en què hem treballat</span>
+          </div>
+          <div class="stat"><b>A mida</b><span>solucions adaptades a cada negoci</span></div>
         </div>
         <p class="cap">Alguns dels nostres clients</p>
         <div class="client-logos grid" aria-label="Logotips d'empreses que hem ajudat">
@@ -1530,20 +1571,17 @@
             <span class="case-cta">Salvadis <span aria-hidden="true">→</span></span>
           </a>
         </div>
-        <p class="hint" style="margin-top: 1.5rem; text-transform: none; letter-spacing: 0">
-          Dades de la presentació original, a 14 d'octubre de 2026.
-        </p>
       </section>
 
       <section class="slide" id="resultats" data-label="Resultats" aria-labelledby="t-resultats">
-        <h2 id="t-resultats">Què ha canviat <em>en el dia a dia?</em></h2>
+        <h2 id="t-resultats">Tres negocis, <em>solucions per al seu dia a dia</em></h2>
         <ul class="results-grid grid" role="list">
           <li>
             <a
               class="card result-card case-link"
               href="https://doscientos.es/projects/kache-envios"
             >
-              <h3>Rutes i cobraments en un sol lloc</h3>
+              <h3>Transport: cada viatge sota control</h3>
               <span
                 >La plataforma de Kache Envíos reuneix sol·licituds, rutes, cobraments i documents
                 en una eina.</span
@@ -1555,11 +1593,12 @@
           </li>
           <li>
             <a class="card result-card case-link" href="https://doscientos.es/projects/optinergia">
-              <h3>Renovacions abans que venci el contracte</h3>
+              <h3>Assessoria: renovacions a temps</h3>
               <span
                 >Optinergia veu els contractes que vencen els pròxims 60 dies i els prioritza per
                 urgència.</span
               >
+              <span class="result-proof">2 setmanes · 6 mòduls entregats</span>
               <span class="case-cta"
                 >Veure el cas d'Optinergia <span aria-hidden="true">→</span></span
               >
@@ -1567,7 +1606,7 @@
           </li>
           <li>
             <a class="card result-card case-link" href="https://doscientos.es/projects/lex-crm">
-              <h3>Expedients amb un pas següent clar</h3>
+              <h3>Despatx: cada expedient en context</h3>
               <span
                 >LEX reuneix contactes, tasques i documents perquè el despatx pugui reprendre cada
                 cas amb context.</span
@@ -1585,39 +1624,49 @@
         data-nav-label="Kache"
         aria-labelledby="t-kache"
       >
-        <h2 id="t-kache">Kache Envíos: <em>menys passos, més temps</em></h2>
-        <p class="lead">Una operació que passa d'informació dispersa a una eina compartida.</p>
+        <h2 id="t-kache">Què passa quan <em>connectes la feina?</em></h2>
+        <p class="lead">Kache Envíos · exemple orientatiu de temps administratiu per servei</p>
         <table class="comparison">
           <thead>
             <tr>
               <th scope="col">Tasques</th>
-              <th scope="col">Abans</th>
-              <th scope="col">Amb la plataforma</th>
+              <th scope="col">Abans (est.)</th>
+              <th scope="col">Amb la plataforma (est.)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">Sol·licituds</th>
-              <td>Informació entre missatges, fulls i documents.</td>
-              <td>Clients, mascotes i sol·licituds en un mateix lloc.</td>
+              <td>15 min</td>
+              <td>5 min</td>
             </tr>
             <tr>
               <th scope="row">Rutes</th>
-              <td>Coordinació amb informació repartida.</td>
-              <td>Rutes i plantilles organitzades en una sola eina.</td>
+              <td>10 min</td>
+              <td>4 min</td>
             </tr>
             <tr>
               <th scope="row">Documents i factures</th>
-              <td>Documents i gestions en eines separades.</td>
-              <td>Documents i factures vinculats a cada servei.</td>
+              <td>15 min</td>
+              <td>5 min</td>
             </tr>
             <tr>
               <th scope="row">Seguiment</th>
-              <td>Consultes i actualitzacions per missatge.</td>
-              <td>El client consulta les sol·licituds i rep actualitzacions.</td>
+              <td>10 min</td>
+              <td>3 min</td>
+            </tr>
+            <tr>
+              <th scope="row">Total</th>
+              <td>50 min</td>
+              <td>17 min</td>
             </tr>
           </tbody>
         </table>
+        <p class="kache-saving">≈33 min menys per servei · ≈66 % menys temps</p>
+        <p class="kache-note">
+          Exemple hipotètic, no mesurat: temps pendents de validar amb Kache Envíos. La coordinació
+          de rutes es reparteix entre serveis.
+        </p>
         <a class="comparison-link" href="https://doscientos.es/projects/kache-envios">
           Veure el projecte de Kache Envíos <span aria-hidden="true">&nbsp;→</span>
         </a>
@@ -1630,34 +1679,32 @@
         data-nav-label="Tracte"
         aria-labelledby="t-competencia"
       >
-        <h2 id="t-competencia">
-          Un equip petit i proper per ajudar <em>autònoms i petites empreses a créixer</em>
-        </h2>
+        <h2 id="t-competencia">Un equip proper, <em>implicat en el teu negoci</em></h2>
         <div class="grid">
           <div class="card">
-            <b>Menys intermediaris</b
-            ><span>Parleu directament amb qui porta el vostre projecte.</span>
+            <b>Parla amb l'equip</b
+            ><span>Sense intermediaris: tractes directament amb qui fa el projecte.</span>
           </div>
           <div class="card">
-            <b>Una estructura lleugera</b
-            ><span>Ajustem l'abast al que l'empresa necessita ara.</span>
+            <b>Comença pel que importa</b
+            ><span>Definim l'abast segons la necessitat i el pressupost del teu negoci.</span>
           </div>
           <div class="card hl">
-            <b>Implicació directa</b
-            ><span>Gerard acompanya el projecte; Pol lidera el desenvolupament.</span>
+            <b>Acompanyament continu</b
+            ><span>Des de la primera conversa fins al llançament i l'evolució de l'eina.</span>
           </div>
         </div>
-        <p class="lead">Contacte directe amb els fundadors i una proposta ajustada a cada etapa.</p>
+        <p class="lead">Una proposta clara i un equip al teu costat.</p>
       </section>
 
       <section
         class="slide"
         id="mercat"
-        data-label="Màrqueting i mercat"
-        data-nav-label="Mercat"
+        data-label="Proximitat"
+        data-nav-label="Proximitat"
         aria-labelledby="t-mercat"
       >
-        <h2 id="t-mercat">Apostem pels negocis de proximitat <em>sense posar límits</em></h2>
+        <h2 id="t-mercat">El teu negoci, <em>un equip a prop</em></h2>
         <p class="lead">
           Som al costat dels autònoms i les petites empreses, amb tracte directe i projectes a mida.
         </p>
@@ -1679,35 +1726,35 @@
       <section
         class="slide"
         id="negoci"
-        data-label="Model de negoci"
-        data-nav-label="Model"
+        data-label="Com treballem"
+        data-nav-label="Projecte"
         aria-labelledby="t-negoci"
       >
-        <h2 id="t-negoci">Construim l'aplicació i <em>no ens oblidem</em></h2>
+        <h2 id="t-negoci">Una proposta clara, <em>de principi a fi</em></h2>
         <div class="business-model">
           <div class="business-main">
             <b>Projecte a mida</b>
             <strong class="business-price">2-15 <small>k€</small></strong>
-            <span>Preu acordat segons l'abast</span>
+            <span>Inversió orientativa; pressupost acordat segons l'abast.</span>
           </div>
           <div class="business-options">
             <div class="business-option">
               <span>01</span>
               <div>
-                <b>Desenvolupament</b>
-                <p>Creació de l'aplicació i posada en marxa.</p>
+                <b>Construïm el que necessites</b>
+                <p>Definim el projecte, el desenvolupem i el posem en marxa.</p>
               </div>
             </div>
             <div class="business-option">
               <span>02</span>
               <div>
-                <b>Manteniment</b>
-                <p>Suport i millores després del llançament.</p>
+                <b>Continuem al teu costat</b>
+                <p>Suport i millores perquè l'eina evolucioni amb el negoci.</p>
               </div>
             </div>
           </div>
         </div>
-        <p class="lead">Els pagaments es reparteixen en fites vinculades a avenços visibles.</p>
+        <p class="lead">Abans de començar, acordem què farem i quant costarà.</p>
       </section>
 
       <section class="slide" id="abaco" data-label="Ábaco" aria-labelledby="t-abaco">
@@ -1738,11 +1785,13 @@
             <p>Emet factures i segueix què queda pendent de cobrar.</p>
           </li>
         </ol>
-        <p class="abaco-benefit">Una sola eina, més ordre i menys feina administrativa.</p>
+        <p class="abaco-benefit">
+          14 dies de prova · sense targeta · una sola eina per al teu dia a dia
+        </p>
       </section>
 
       <section class="slide" id="equip" data-label="Equip" aria-labelledby="t-equip">
-        <h2 id="t-equip">Qui crea l'aplicació i <em>us acompanya</em></h2>
+        <h2 id="t-equip">Les persones <em>al costat del teu projecte</em></h2>
         <div class="grid">
           <div class="card hl">
             <img
@@ -1752,7 +1801,7 @@
               loading="lazy"
               decoding="async"
             /><b>Pol Gubau</b
-            ><span>Lidera el desenvolupament, del plantejament a la posada en marxa</span>
+            ><span>Lidera el desenvolupament, del plantejament a la posada en marxa.</span>
           </div>
           <div class="card">
             <img
@@ -1762,9 +1811,7 @@
               loading="lazy"
               decoding="async"
             /><b>Gerard Martínez</b
-            ><span
-              >Entén les necessitats, defineix la proposta i us acompanya durant el projecte</span
-            >
+            ><span>Entén les teves necessitats i t'acompanya durant el projecte.</span>
           </div>
           <div class="card">
             <img
@@ -1787,23 +1834,25 @@
       >
         <div class="closing">
           <div class="closing-copy">
-            <h2 id="t-tancament">Si el vostre procés ja no cap en un Excel, <em>parlem-ne</em></h2>
-            <p class="lead">Escanegeu el QR per conèixer millor com treballem</p>
+            <h2 id="t-tancament">Quina feina et fa perdre temps? <em>Parlem-ne.</em></h2>
+            <p class="lead">
+              Explica'ns el teu procés i estudiem com millorar-lo. Primera conversa sense compromís.
+            </p>
             <a class="closing-contact" href="mailto:hola@doscientos.es">hola@doscientos.es</a>
           </div>
           <a
             class="qr-card"
-            href="https://doscientos.es"
+            href="https://doscientos.es/contact"
             target="_blank"
             rel="noopener"
-            aria-label="Obrir doscientos.es en una pestanya nova"
+            aria-label="Contactar amb doscientos en una pestanya nova"
           >
             <img
               class="qr-code"
-              src="https://api.qrserver.com/v1/create-qr-code/?size=640x640&amp;format=svg&amp;qzone=4&amp;data=https%3A%2F%2Fdoscientos.es"
-              alt="Codi QR per visitar doscientos.es"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=640x640&amp;format=svg&amp;qzone=4&amp;data=https%3A%2F%2Fdoscientos.es%2Fcontact"
+              alt="Codi QR per contactar amb doscientos"
             />
-            <span>doscientos.es</span>
+            <span>Contacta amb nosaltres</span>
           </a>
         </div>
       </section>

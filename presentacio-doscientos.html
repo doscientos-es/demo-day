@@ -1048,8 +1048,65 @@
         margin-top: 1.25rem;
       }
 
+      .abaco-flow {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+        list-style: none;
+      }
+
+      .abaco-flow li {
+        position: relative;
+        min-width: 0;
+        padding: 1.4rem;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgb(255 255 255/0.04);
+      }
+
+      .abaco-flow li:not(:last-child)::after {
+        content: '→';
+        position: absolute;
+        top: 50%;
+        right: -1.25rem;
+        color: var(--lime);
+        font-size: 1rem;
+      }
+
+      .abaco-flow .step-number {
+        display: grid;
+        width: 2.5rem;
+        height: 2.5rem;
+        place-items: center;
+        margin-bottom: 1.25rem;
+        border-radius: 50%;
+        background: var(--lime);
+        color: var(--bg);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .abaco-flow h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        line-height: 1.2;
+      }
+
+      .abaco-flow p {
+        color: var(--dim);
+        line-height: 1.5;
+      }
+
+      .abaco-benefit {
+        margin-top: 2rem;
+        color: var(--lime);
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        font-weight: 600;
+      }
+
       .slide#equip .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1.5rem;
       }
 
@@ -1219,8 +1276,20 @@
           grid-template-columns: 1fr;
         }
 
+        .abaco-flow {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .abaco-flow li:nth-child(2)::after {
+          content: none;
+        }
+
         .slide#equip .grid {
           grid-template-columns: 1fr;
+        }
+
+        .slide#equip .card {
+          min-height: 0;
         }
 
         .closing {
@@ -1245,6 +1314,24 @@
         .slide#solucio .solution-shot figcaption {
           padding: 0.6rem;
           font-size: 0.7rem;
+        }
+
+        .abaco-flow {
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+          margin-top: 1.5rem;
+        }
+
+        .abaco-flow li {
+          padding: 1rem;
+        }
+
+        .abaco-flow li:not(:last-child)::after {
+          content: none;
+        }
+
+        .abaco-flow .step-number {
+          margin-bottom: 0.6rem;
         }
 
         .business-main {
@@ -1623,6 +1710,37 @@
         <p class="lead">Els pagaments es reparteixen en fites vinculades a avenços visibles.</p>
       </section>
 
+      <section class="slide" id="abaco" data-label="Ábaco" aria-labelledby="t-abaco">
+        <h2 id="t-abaco">Ábaco: <em>del pressupost al cobrament</em></h2>
+        <p class="lead">
+          Una eina per a autònoms i petites empreses de serveis i instal·lacions, que connecta tota
+          la feina.
+        </p>
+        <ol class="abaco-flow" aria-label="El recorregut d'un treball amb Ábaco">
+          <li>
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Pressupost</h3>
+            <p>Prepara la proposta i registra la resposta del client.</p>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Agenda</h3>
+            <p>Organitza els treballs i planifica les visites.</p>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Treball</h3>
+            <p>Registra els parts, les fotos i les incidències de cada visita.</p>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">4</span>
+            <h3>Factura i cobrament</h3>
+            <p>Emet factures i segueix què queda pendent de cobrar.</p>
+          </li>
+        </ol>
+        <p class="abaco-benefit">Una sola eina, més ordre i menys feina administrativa.</p>
+      </section>
+
       <section class="slide" id="equip" data-label="Equip" aria-labelledby="t-equip">
         <h2 id="t-equip">Qui crea l'aplicació i <em>us acompanya</em></h2>
         <div class="grid">
@@ -1647,6 +1765,15 @@
             ><span
               >Entén les necessitats, defineix la proposta i us acompanya durant el projecte</span
             >
+          </div>
+          <div class="card">
+            <img
+              class="team-photo"
+              src="https://lh3.googleusercontent.com/a-/ALV-UjX18dovXLW-TMJ6lO0lgm2iRx5s5rNSJALjnam6mUrOap_ahRsS=s480-p-k-rw-no"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            /><b>Sergio Alonso</b><span>Desenvolupador de doscientos</span>
           </div>
         </div>
       </section>

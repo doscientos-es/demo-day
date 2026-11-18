@@ -1048,60 +1048,6 @@
         margin-top: 1.25rem;
       }
 
-      .slide#fites .grid {
-        counter-reset: fites;
-        position: relative;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 1.25rem;
-        margin-top: 3rem;
-      }
-
-      .slide#fites .grid::before {
-        content: '';
-        position: absolute;
-        top: 0.9rem;
-        left: 0.9rem;
-        right: 0.9rem;
-        height: 1px;
-        background: linear-gradient(90deg, var(--lime), var(--line) 70%);
-      }
-
-      .slide#fites .card {
-        position: relative;
-        min-height: 11rem;
-        padding: 2.75rem 0.5rem 1rem 0;
-        border-top: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .slide#fites .card::before {
-        counter-increment: fites;
-        content: '0' counter(fites);
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 1;
-        display: grid;
-        width: 1.8rem;
-        height: 1.8rem;
-        place-items: center;
-        border: 1px solid rgb(195 255 120/0.65);
-        border-radius: 50%;
-        background: #19372a;
-        color: var(--lime);
-        font-size: 0.75rem;
-        font-weight: 700;
-        font-variant-numeric: tabular-nums;
-      }
-
-      .slide#fites .card b {
-        font-size: 1.1rem;
-      }
-
-      .slide#fites .card span {
-        font-size: 0.95rem;
-      }
-
       .slide#equip .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1.5rem;
@@ -1273,14 +1219,6 @@
           grid-template-columns: 1fr;
         }
 
-        .slide#fites .grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .slide#fites .grid::before {
-          display: none;
-        }
-
         .slide#equip .grid {
           grid-template-columns: 1fr;
         }
@@ -1307,14 +1245,6 @@
         .slide#solucio .solution-shot figcaption {
           padding: 0.6rem;
           font-size: 0.7rem;
-        }
-
-        .slide#fites .grid {
-          grid-template-columns: 1fr;
-        }
-
-        .slide#fites .card {
-          min-height: 0;
         }
 
         .business-main {
@@ -1691,33 +1621,6 @@
           </div>
         </div>
         <p class="lead">Els pagaments es reparteixen en fites vinculades a avenços visibles.</p>
-      </section>
-
-      <section
-        class="slide"
-        id="fites"
-        data-label="Properes fites"
-        data-nav-label="Fites"
-        aria-labelledby="t-fites"
-      >
-        <h2 id="t-fites">Fer més repetible la creació <em>d'aplicacions útils</em></h2>
-        <div class="grid">
-          <div class="card hl">
-            <b>Diagnosticar millor</b
-            ><span>Detectar quin procés guanyarà més amb la digitalització.</span>
-          </div>
-          <div class="card">
-            <b>Mostrar resultats</b
-            ><span>Explicar el repte, la solució i el canvi en el dia a dia.</span>
-          </div>
-          <div class="card">
-            <b>Donar continuïtat</b
-            ><span>Ampliar el suport i l'evolució per als clients actuals.</span>
-          </div>
-          <div class="card">
-            <b>Validar Ábaco</b><span>Provar el producte amb clients recurrents.</span>
-          </div>
-        </div>
       </section>
 
       <section class="slide" id="equip" data-label="Equip" aria-labelledby="t-equip">

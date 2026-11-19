@@ -241,12 +241,6 @@
         font-weight: 600;
       }
 
-      .card .case-cta {
-        display: block;
-        margin-top: 0.5rem;
-        color: var(--lime);
-      }
-
       .case-link:hover .case-cta,
       .case-link:focus-visible .case-cta {
         text-decoration: underline;
@@ -713,80 +707,6 @@
         max-width: 46rem;
       }
 
-      .slide#solucio .grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-        margin-top: 1.5rem;
-      }
-
-      .slide#solucio .card {
-        padding: 0.75rem 0;
-        border: 0;
-        border-top: 1px solid var(--line);
-      }
-
-      .slide#solucio .card.hl {
-        background: transparent;
-        color: inherit;
-      }
-
-      .slide#solucio .card.hl b {
-        color: var(--lime);
-      }
-
-      .slide#solucio .card.hl span {
-        color: var(--dim);
-      }
-
-      .slide#solucio .card .case-cta,
-      .slide#solucio .card.hl .case-cta {
-        color: var(--lime);
-      }
-
-      .js .slide.on#solucio {
-        display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        align-content: center;
-        align-items: center;
-        gap: 1.5rem clamp(2rem, 5vw, 6rem);
-      }
-
-      .slide#solucio .solution-copy {
-        min-width: 0;
-      }
-
-      .slide#solucio .solution-showcase {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        align-items: center;
-        gap: 1rem;
-        min-width: 0;
-      }
-
-      .slide#solucio .solution-shot {
-        min-width: 0;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: rgb(255 255 255/0.04);
-      }
-
-      .slide#solucio .solution-shot img {
-        display: block;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        background: #f3f5f1;
-      }
-
-      .slide#solucio .solution-shot figcaption {
-        padding: 0.75rem 0.85rem;
-        color: var(--dim);
-        font-size: 0.82rem;
-        font-weight: 600;
-        line-height: 1.35;
-      }
-
       .slide#validacio {
         background: radial-gradient(ellipse at 50% 42%, rgb(195 255 120/0.08), transparent 55%);
       }
@@ -814,100 +734,42 @@
 
       .results-grid {
         list-style: none;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .result-card {
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-        gap: 0.75rem;
-        padding: clamp(1.25rem, 2.25vw, 2rem);
+        display: block;
+        overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 16px;
         background: rgb(255 255 255/0.04);
       }
 
-      .result-card h3 {
-        font-size: clamp(1.25rem, 2vw, 1.65rem);
-        line-height: 1.2;
-        text-wrap: balance;
-      }
-
-      .result-card .result-proof {
-        color: var(--lime);
-        font-size: 1rem;
-        font-weight: 700;
-        font-variant-numeric: tabular-nums;
+      .result-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        background: #e9ede8;
       }
 
       .result-card .case-cta {
-        margin-top: auto;
-        padding-top: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1rem;
+        font-size: clamp(1rem, 1.5vw, 1.35rem);
       }
 
-      .comparison {
-        width: 100%;
-        max-width: 70rem;
-        margin-top: 2rem;
-        border-collapse: collapse;
-        table-layout: fixed;
-        font-size: clamp(0.8rem, 1.2vw, 1rem);
-        line-height: 1.45;
-        text-align: left;
-      }
-
-      .comparison th,
-      .comparison td {
-        padding: 0.9rem 0.75rem;
-        border-bottom: 1px solid var(--line);
-        overflow-wrap: anywhere;
-        vertical-align: top;
-      }
-
-      .comparison th:first-child {
-        width: 24%;
-        padding-left: 0;
-      }
-
-      .comparison thead th {
-        color: var(--dim);
-      }
-
-      .comparison thead th:last-child {
+      .result-card .case-cta span[aria-hidden] {
         color: var(--lime);
       }
 
-      .comparison td {
-        color: var(--dim);
-      }
-
-      .slide#kache .comparison td {
-        font-size: clamp(1.1rem, 2vw, 1.5rem);
-        font-weight: 600;
-        font-variant-numeric: tabular-nums;
-      }
-
-      .slide#kache .comparison td:last-child {
-        color: var(--lime);
-      }
-
-      .kache-saving {
-        margin-top: 1.5rem;
-        color: var(--lime);
-        font-size: clamp(1.2rem, 2vw, 1.75rem);
-        font-weight: 600;
-      }
-
-      .kache-note {
-        margin-top: 0.5rem;
-        color: var(--dim);
-        font-size: 0.85rem;
-        line-height: 1.4;
-      }
-
-      .comparison-link {
+      .kache-link {
         display: inline-flex;
+        align-self: flex-start;
         align-items: center;
         min-height: 44px;
         margin-top: 1rem;
@@ -915,7 +777,7 @@
         font-weight: 600;
       }
 
-      .comparison-link:hover {
+      .kache-link:hover {
         text-decoration: underline;
         text-underline-offset: 0.2em;
       }
@@ -947,22 +809,13 @@
 
       .slide#mercat h2 {
         grid-column: 1;
-        grid-row: 1;
         max-width: 13ch;
         font-size: clamp(2.7rem, 4.6vw, 4.5rem);
-      }
-
-      .slide#mercat .lead {
-        grid-column: 1;
-        grid-row: 2;
-        align-self: start;
-        margin-top: 0;
       }
 
       .slide#mercat .grid {
         counter-reset: mercat;
         grid-column: 2;
-        grid-row: 1 / span 2;
         grid-template-columns: 1fr;
         gap: 0.8rem;
         margin: 0;
@@ -1081,11 +934,7 @@
         line-height: 1.45;
       }
 
-      .slide#negoci .lead {
-        margin-top: 1.25rem;
-      }
-
-      .abaco-flow {
+      .process-flow {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 1.5rem;
@@ -1093,7 +942,7 @@
         list-style: none;
       }
 
-      .abaco-flow li {
+      .process-flow li {
         position: relative;
         min-width: 0;
         padding: 1.4rem;
@@ -1102,16 +951,17 @@
         background: rgb(255 255 255/0.04);
       }
 
-      .abaco-flow li:not(:last-child)::after {
+      .process-flow li:not(:last-child)::after {
         content: '→';
         position: absolute;
         top: 50%;
+        transform: translateY(-50%);
         right: -1.25rem;
         color: var(--lime);
         font-size: 1rem;
       }
 
-      .abaco-flow .step-number {
+      .process-flow .step-number {
         display: grid;
         width: 2.5rem;
         height: 2.5rem;
@@ -1124,15 +974,32 @@
         font-variant-numeric: tabular-nums;
       }
 
-      .abaco-flow h3 {
+      .process-flow h3 {
         margin-bottom: 0.5rem;
         font-size: 1.2rem;
         line-height: 1.2;
       }
 
-      .abaco-flow p {
+      .process-flow p {
         color: var(--dim);
         line-height: 1.5;
+      }
+
+      .kache-flow .flow-automatic {
+        border-color: rgb(195 255 120/0.35);
+        background: rgb(195 255 120/0.08);
+      }
+
+      .flow-tag {
+        display: block;
+        margin-bottom: 0.65rem;
+        color: var(--dim);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .flow-automatic .flow-tag {
+        color: var(--lime);
       }
 
       .abaco-benefit {
@@ -1254,10 +1121,8 @@
         }
 
         .slide#mercat h2,
-        .slide#mercat .lead,
         .slide#mercat .grid {
           grid-column: 1;
-          grid-row: auto;
         }
 
         .slide#mercat h2 {
@@ -1287,24 +1152,6 @@
           padding-inline: 1.5rem;
         }
 
-        .js .slide.on#solucio {
-          grid-template-columns: 1fr;
-          align-content: start;
-          gap: 1rem;
-        }
-
-        .slide#solucio .grid {
-          gap: 0;
-          margin-top: 1rem;
-        }
-
-        .slide#solucio .card {
-          padding: 0.6rem 0;
-          border: 0;
-          border-top: 1px solid var(--line);
-          border-radius: 0;
-        }
-
         .slide#competencia .grid {
           grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
         }
@@ -1313,11 +1160,11 @@
           grid-template-columns: 1fr;
         }
 
-        .abaco-flow {
+        #abaco .process-flow {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .abaco-flow li:nth-child(2)::after {
+        #abaco .process-flow li:nth-child(2)::after {
           content: none;
         }
 
@@ -1339,35 +1186,38 @@
         }
       }
 
+      @media (max-width: 760px) {
+        .results-grid,
+        .kache-flow {
+          grid-template-columns: 1fr;
+          margin-top: 1.5rem;
+        }
+
+        .kache-flow li:not(:last-child)::after {
+          content: '↓';
+          top: auto;
+          right: 50%;
+          bottom: -1.5rem;
+          transform: translateX(50%);
+        }
+      }
+
       @media (max-width: 560px) {
-        .slide#solucio {
-          padding-block: 4.75rem 5.75rem;
-        }
-
-        .slide#solucio .solution-showcase {
-          gap: 0.6rem;
-        }
-
-        .slide#solucio .solution-shot figcaption {
-          padding: 0.6rem;
-          font-size: 0.7rem;
-        }
-
-        .abaco-flow {
+        #abaco .process-flow {
           grid-template-columns: 1fr;
           gap: 0.75rem;
           margin-top: 1.5rem;
         }
 
-        .abaco-flow li {
+        .process-flow li {
           padding: 1rem;
         }
 
-        .abaco-flow li:not(:last-child)::after {
+        #abaco .process-flow li:not(:last-child)::after {
           content: none;
         }
 
-        .abaco-flow .step-number {
+        .process-flow .step-number {
           margin-bottom: 0.6rem;
         }
 
@@ -1410,10 +1260,7 @@
     <main id="main">
       <section class="slide" id="portada" data-label="Portada" aria-labelledby="t-portada">
         <h1 id="t-portada">Menys feina administrativa. <em>Més temps per al teu negoci.</em></h1>
-        <p class="lead">
-          Creem aplicacions i automatitzacions per a autònoms i petites empreses que volen treballar
-          amb més ordre i menys tasques repetitives.
-        </p>
+        <p class="lead">Aplicacions i automatitzacions per a autònoms i petites empreses.</p>
       </section>
 
       <section
@@ -1423,24 +1270,11 @@
         data-nav-label="Problema"
         aria-labelledby="t-problema"
       >
-        <h2 id="t-problema">Et sona alguna <em>d'aquestes situacions?</em></h2>
-        <p class="lead">
-          Quan la informació està entre missatges, fulls de càlcul i programes diferents, cada feina
-          demana més temps del necessari.
-        </p>
+        <h2 id="t-problema">La informació, <em>repartida per tot arreu</em></h2>
         <div class="grid">
-          <div class="card">
-            <b>On és el pressupost?</b
-            ><span>Busques entre correus i missatges per trobar l'última versió.</span>
-          </div>
-          <div class="card">
-            <b>Qui fa la visita?</b
-            ><span>La informació del client i l'agenda no estan al mateix lloc.</span>
-          </div>
-          <div class="card">
-            <b>Què falta per cobrar?</b
-            ><span>Has de revisar factures i converses per saber què queda pendent.</span>
-          </div>
+          <div class="card"><b>On és l’últim pressupost?</b></div>
+          <div class="card"><b>Qui fa la visita?</b></div>
+          <div class="card"><b>Què falta per cobrar?</b></div>
         </div>
       </section>
 
@@ -1451,64 +1285,11 @@
         data-nav-label="Solució"
         aria-labelledby="t-solucio"
       >
-        <div class="solution-copy">
-          <h2 id="t-solucio">La teva feina, <em>més fàcil de gestionar</em></h2>
-          <p class="lead">
-            Des d'un CRM fins a una eina per coordinar serveis, rutes o factures: construïm el que
-            necessita el teu negoci.
-          </p>
-          <div class="grid">
-            <a class="card hl case-link" href="https://doscientos.es/projects/lex-crm">
-              <b>Troba la informació</b
-              ><span>Clients, expedients i documents en un mateix lloc.</span>
-              <span class="case-cta">Veure el cas de LEX <span aria-hidden="true">→</span></span>
-            </a>
-            <a class="card case-link" href="https://doscientos.es/projects/optinergia">
-              <b>Anticipa't</b
-              ><span>Detecta els contractes que vencen i prioritza les renovacions.</span>
-              <span class="case-cta"
-                >Veure el cas d'Optinergia <span aria-hidden="true">→</span></span
-              >
-            </a>
-            <a class="card case-link" href="https://doscientos.es/projects/kache-envios">
-              <b>Coordina cada servei</b
-              ><span>Organitza sol·licituds, rutes i documents en una sola eina.</span>
-              <span class="case-cta"
-                >Veure el cas de Kache Envíos <span aria-hidden="true">→</span></span
-              >
-            </a>
-          </div>
-        </div>
-        <div
-          class="solution-showcase"
-          aria-label="Exemples d'aplicacions desenvolupades per doscientos"
-        >
-          <a class="solution-shot case-link" href="https://doscientos.es/projects/kache-envios">
-            <figure>
-              <img
-                src="https://doscientos.es/_astro/inicio.BwkMYSLg_ZJgUtn.webp"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption class="case-cta">
-                Kache Envíos · gestió operativa <span aria-hidden="true">→</span>
-              </figcaption>
-            </figure>
-          </a>
-          <a class="solution-shot case-link" href="https://doscientos.es/projects/optinergia">
-            <figure>
-              <img
-                src="https://doscientos.es/_astro/dashboard.D_yQW51__AaJIo.webp"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption class="case-cta">
-                Optinergia · CRM de renovacions <span aria-hidden="true">→</span>
-              </figcaption>
-            </figure>
-          </a>
+        <h2 id="t-solucio">Connectem <em>la feina del dia a dia</em></h2>
+        <div class="grid">
+          <div class="card hl"><b>Clients i documents en un lloc</b></div>
+          <div class="card"><b>Serveis i visites en una agenda</b></div>
+          <div class="card"><b>Avisos de cobraments i renovacions</b></div>
         </div>
       </section>
 
@@ -1519,14 +1300,12 @@
         data-nav-label="Experiència"
         aria-labelledby="t-validacio"
       >
-        <h2 id="t-validacio">Experiència real, <em>solucions per al teu dia a dia</em></h2>
-        <p class="lead">Ja hem ajudat negocis diferents a convertir processos en eines útils.</p>
+        <h2 id="t-validacio">Experiència <em>i clients</em></h2>
         <div class="stats">
           <div class="stat hl"><b>+15</b><span>empreses a qui hem ajudat</span></div>
           <div class="stat">
             <b>+200.000</b><span>usuaris d'aplicacions en què hem treballat</span>
           </div>
-          <div class="stat"><b>A mida</b><span>solucions adaptades a cada negoci</span></div>
         </div>
         <p class="cap">Alguns dels nostres clients</p>
         <div class="client-logos grid" aria-label="Logotips d'empreses que hem ajudat">
@@ -1574,44 +1353,57 @@
       </section>
 
       <section class="slide" id="resultats" data-label="Resultats" aria-labelledby="t-resultats">
-        <h2 id="t-resultats">Tres negocis, <em>solucions per al seu dia a dia</em></h2>
+        <h2 id="t-resultats">Resultats</h2>
         <ul class="results-grid grid" role="list">
           <li>
-            <a
-              class="card result-card case-link"
-              href="https://doscientos.es/projects/kache-envios"
-            >
-              <h3>Transport: cada viatge sota control</h3>
-              <span
-                >La plataforma de Kache Envíos reuneix sol·licituds, rutes, cobraments i documents
-                en una eina.</span
-              >
-              <span class="case-cta"
-                >Veure el cas de Kache Envíos <span aria-hidden="true">→</span></span
-              >
+            <a class="result-card case-link" href="https://doscientos.es/projects/kache-envios">
+              <figure>
+                <img
+                  src="https://doscientos.es/_astro/inicio.BwkMYSLg_ZJgUtn.webp"
+                  alt="Tauler de gestió dels transports"
+                  width="2527"
+                  height="1342"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="case-cta">
+                  <span translate="no">Kache Envíos</span><span aria-hidden="true">→</span>
+                </figcaption>
+              </figure>
             </a>
           </li>
           <li>
-            <a class="card result-card case-link" href="https://doscientos.es/projects/optinergia">
-              <h3>Assessoria: renovacions a temps</h3>
-              <span
-                >Optinergia veu els contractes que vencen els pròxims 60 dies i els prioritza per
-                urgència.</span
-              >
-              <span class="result-proof">2 setmanes · 6 mòduls entregats</span>
-              <span class="case-cta"
-                >Veure el cas d'Optinergia <span aria-hidden="true">→</span></span
-              >
+            <a class="result-card case-link" href="https://doscientos.es/projects/optinergia">
+              <figure>
+                <img
+                  src="https://doscientos.es/_astro/dashboard.D_yQW51__AaJIo.webp"
+                  alt="Tauler amb els contractes pendents de renovar"
+                  width="2275"
+                  height="1362"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="case-cta">
+                  <span translate="no">Optinergia</span><span aria-hidden="true">→</span>
+                </figcaption>
+              </figure>
             </a>
           </li>
           <li>
-            <a class="card result-card case-link" href="https://doscientos.es/projects/lex-crm">
-              <h3>Despatx: cada expedient en context</h3>
-              <span
-                >LEX reuneix contactes, tasques i documents perquè el despatx pugui reprendre cada
-                cas amb context.</span
-              >
-              <span class="case-cta">Veure el cas de LEX <span aria-hidden="true">→</span></span>
+            <a class="result-card case-link" href="https://doscientos.es/projects/lex-crm">
+              <figure>
+                <img
+                  src="https://doscientos.es/_astro/inicio.OF4QCJ2a_Z1mwyeE.webp"
+                  alt="Espai de treball del despatx jurídic"
+                  width="2531"
+                  height="1348"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="case-cta">
+                  <span translate="no">LEX</span><span aria-hidden="true">→</span>
+                </figcaption>
+              </figure>
             </a>
           </li>
         </ul>
@@ -1624,51 +1416,37 @@
         data-nav-label="Kache"
         aria-labelledby="t-kache"
       >
-        <h2 id="t-kache">Què passa quan <em>connectes la feina?</em></h2>
-        <p class="lead">Kache Envíos · exemple orientatiu de temps administratiu per servei</p>
-        <table class="comparison">
-          <thead>
-            <tr>
-              <th scope="col">Tasques</th>
-              <th scope="col">Abans (est.)</th>
-              <th scope="col">Amb la plataforma (est.)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Sol·licituds</th>
-              <td>15 min</td>
-              <td>5 min</td>
-            </tr>
-            <tr>
-              <th scope="row">Rutes</th>
-              <td>10 min</td>
-              <td>4 min</td>
-            </tr>
-            <tr>
-              <th scope="row">Documents i factures</th>
-              <td>15 min</td>
-              <td>5 min</td>
-            </tr>
-            <tr>
-              <th scope="row">Seguiment</th>
-              <td>10 min</td>
-              <td>3 min</td>
-            </tr>
-            <tr>
-              <th scope="row">Total</th>
-              <td>50 min</td>
-              <td>17 min</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="kache-saving">≈33 min menys per servei · ≈66 % menys temps</p>
-        <p class="kache-note">
-          Exemple hipotètic, no mesurat: temps pendents de validar amb Kache Envíos. La coordinació
-          de rutes es reparteix entre serveis.
-        </p>
-        <a class="comparison-link" href="https://doscientos.es/projects/kache-envios">
-          Veure el projecte de Kache Envíos <span aria-hidden="true">&nbsp;→</span>
+        <h2 id="t-kache">
+          <span translate="no">Kache Envíos</span>: <em>de la reserva a la confirmació</em>
+        </h2>
+        <ol class="process-flow kache-flow" role="list" aria-label="Flux d’una reserva en línia">
+          <li>
+            <span class="step-number" aria-hidden="true">1</span>
+            <span class="flow-tag">Client</span>
+            <h3>Reserva en línia</h3>
+            <p>Tria la ruta i paga.</p>
+          </li>
+          <li class="flow-automatic">
+            <span class="step-number" aria-hidden="true">2</span>
+            <span class="flow-tag">Automàtic</span>
+            <h3>Validació del pagament</h3>
+            <p>La passarel·la confirma el cobrament.</p>
+          </li>
+          <li class="flow-automatic">
+            <span class="step-number" aria-hidden="true">3</span>
+            <span class="flow-tag">Automàtic</span>
+            <h3>Plaça i documents</h3>
+            <p>Assigna plaça al vehicle i emet la carta de port i la factura.</p>
+          </li>
+          <li class="flow-automatic">
+            <span class="step-number" aria-hidden="true">4</span>
+            <span class="flow-tag">Automàtic</span>
+            <h3>Correu de confirmació</h3>
+            <p>Envia els PDF i la invitació al calendari.</p>
+          </li>
+        </ol>
+        <a class="kache-link" href="https://doscientos.es/projects/kache-envios">
+          Veure el projecte <span aria-hidden="true">&nbsp;→</span>
         </a>
       </section>
 
@@ -1682,19 +1460,15 @@
         <h2 id="t-competencia">Un equip proper, <em>implicat en el teu negoci</em></h2>
         <div class="grid">
           <div class="card">
-            <b>Parla amb l'equip</b
-            ><span>Sense intermediaris: tractes directament amb qui fa el projecte.</span>
+            <b>Sense intermediaris</b><span>Parles amb qui fa el projecte.</span>
           </div>
           <div class="card">
-            <b>Comença pel que importa</b
-            ><span>Definim l'abast segons la necessitat i el pressupost del teu negoci.</span>
+            <b>Prioritats clares</b><span>Acordem l’abast i el pressupost.</span>
           </div>
           <div class="card hl">
-            <b>Acompanyament continu</b
-            ><span>Des de la primera conversa fins al llançament i l'evolució de l'eina.</span>
+            <b>Acompanyament continu</b><span>També després del llançament.</span>
           </div>
         </div>
-        <p class="lead">Una proposta clara i un equip al teu costat.</p>
       </section>
 
       <section
@@ -1704,21 +1478,13 @@
         data-nav-label="Proximitat"
         aria-labelledby="t-mercat"
       >
-        <h2 id="t-mercat">El teu negoci, <em>un equip a prop</em></h2>
-        <p class="lead">
-          Som al costat dels autònoms i les petites empreses, amb tracte directe i projectes a mida.
-        </p>
+        <h2 id="t-mercat">Un equip <em>de proximitat</em></h2>
         <div class="grid" role="list" aria-label="El nostre enfocament comercial">
-          <div class="card" role="listitem">
-            <b>Arrelats al territori</b
-            ><span>Estem a prop dels negocis del Maresme i de Catalunya.</span>
-          </div>
           <div class="card hl" role="listitem">
-            <b>Tracte directe</b
-            ><span>Coneixem cada negoci i acompanyem les persones que hi treballen.</span>
+            <b>Al Maresme</b><span>Amb projectes arreu de Catalunya.</span>
           </div>
           <div class="card" role="listitem">
-            <b>Sense fronteres</b><span>També treballem amb empreses d'arreu d'Espanya.</span>
+            <b>A distància</b><span>També treballem amb empreses d’arreu d’Espanya.</span>
           </div>
         </div>
       </section>
@@ -1730,68 +1496,62 @@
         data-nav-label="Projecte"
         aria-labelledby="t-negoci"
       >
-        <h2 id="t-negoci">Una proposta clara, <em>de principi a fi</em></h2>
+        <h2 id="t-negoci">Com <em>treballem</em></h2>
         <div class="business-model">
           <div class="business-main">
             <b>Projecte a mida</b>
             <strong class="business-price">2-15 <small>k€</small></strong>
-            <span>Inversió orientativa; pressupost acordat segons l'abast.</span>
+            <span>Inversió orientativa segons l’abast.</span>
           </div>
           <div class="business-options">
             <div class="business-option">
               <span>01</span>
               <div>
-                <b>Construïm el que necessites</b>
-                <p>Definim el projecte, el desenvolupem i el posem en marxa.</p>
+                <b>Projecte i llançament</b>
+                <p>Definim, desenvolupem i posem en marxa l’eina.</p>
               </div>
             </div>
             <div class="business-option">
               <span>02</span>
               <div>
-                <b>Continuem al teu costat</b>
-                <p>Suport i millores perquè l'eina evolucioni amb el negoci.</p>
+                <b>Suport i millores</b>
+                <p>L’eina evoluciona amb el negoci.</p>
               </div>
             </div>
           </div>
         </div>
-        <p class="lead">Abans de començar, acordem què farem i quant costarà.</p>
       </section>
 
       <section class="slide" id="abaco" data-label="Ábaco" aria-labelledby="t-abaco">
         <h2 id="t-abaco">Ábaco: <em>del pressupost al cobrament</em></h2>
-        <p class="lead">
-          Una eina per a autònoms i petites empreses de serveis i instal·lacions, que connecta tota
-          la feina.
-        </p>
-        <ol class="abaco-flow" aria-label="El recorregut d'un treball amb Ábaco">
+        <p class="lead">Per a autònoms i empreses de serveis i instal·lacions.</p>
+        <ol class="process-flow" role="list" aria-label="El recorregut d’un treball amb Ábaco">
           <li>
             <span class="step-number" aria-hidden="true">1</span>
             <h3>Pressupost</h3>
-            <p>Prepara la proposta i registra la resposta del client.</p>
+            <p>Crea la proposta i registra la resposta.</p>
           </li>
           <li>
             <span class="step-number" aria-hidden="true">2</span>
             <h3>Agenda</h3>
-            <p>Organitza els treballs i planifica les visites.</p>
+            <p>Planifica les visites.</p>
           </li>
           <li>
             <span class="step-number" aria-hidden="true">3</span>
             <h3>Treball</h3>
-            <p>Registra els parts, les fotos i les incidències de cada visita.</p>
+            <p>Registra parts, fotos i incidències.</p>
           </li>
           <li>
             <span class="step-number" aria-hidden="true">4</span>
             <h3>Factura i cobrament</h3>
-            <p>Emet factures i segueix què queda pendent de cobrar.</p>
+            <p>Factura i controla els cobraments.</p>
           </li>
         </ol>
-        <p class="abaco-benefit">
-          14 dies de prova · sense targeta · una sola eina per al teu dia a dia
-        </p>
+        <p class="abaco-benefit">14 dies de prova · sense targeta</p>
       </section>
 
       <section class="slide" id="equip" data-label="Equip" aria-labelledby="t-equip">
-        <h2 id="t-equip">Les persones <em>al costat del teu projecte</em></h2>
+        <h2 id="t-equip">L’equip</h2>
         <div class="grid">
           <div class="card hl">
             <img
@@ -1800,8 +1560,7 @@
               alt=""
               loading="lazy"
               decoding="async"
-            /><b>Pol Gubau</b
-            ><span>Lidera el desenvolupament, del plantejament a la posada en marxa.</span>
+            /><b>Pol Gubau</b><span>Desenvolupament</span>
           </div>
           <div class="card">
             <img
@@ -1810,8 +1569,7 @@
               alt=""
               loading="lazy"
               decoding="async"
-            /><b>Gerard Martínez</b
-            ><span>Entén les teves necessitats i t'acompanya durant el projecte.</span>
+            /><b>Gerard Martínez</b><span>Acompanyament de clients</span>
           </div>
           <div class="card">
             <img
@@ -1820,7 +1578,7 @@
               alt=""
               loading="lazy"
               decoding="async"
-            /><b>Sergio Alonso</b><span>Desenvolupador de doscientos</span>
+            /><b>Sergio Alonso</b><span>Desenvolupament</span>
           </div>
         </div>
       </section>
@@ -1835,9 +1593,7 @@
         <div class="closing">
           <div class="closing-copy">
             <h2 id="t-tancament">Quina feina et fa perdre temps? <em>Parlem-ne.</em></h2>
-            <p class="lead">
-              Explica'ns el teu procés i estudiem com millorar-lo. Primera conversa sense compromís.
-            </p>
+            <p class="lead">Primera conversa sense compromís.</p>
             <a class="closing-contact" href="mailto:hola@doscientos.es">hola@doscientos.es</a>
           </div>
           <a

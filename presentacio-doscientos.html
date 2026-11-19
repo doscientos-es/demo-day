@@ -767,11 +767,11 @@
         color: var(--lime);
       }
 
-      .slide#kache {
+      .kache-slide {
         padding-block: 5rem 6rem;
       }
 
-      .slide#kache h2 {
+      .kache-slide h2 {
         max-width: none;
         font-size: clamp(2.4rem, 4.5vw, 3.75rem);
       }
@@ -818,12 +818,28 @@
       }
 
       .kache-results .stats {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        margin-top: 0.75rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 0;
       }
 
       .kache-results .stat b {
         font-size: clamp(1.65rem, 3vw, 2.75rem);
+      }
+
+      .kache-results .kache-revenue {
+        grid-column: 1 / -1;
+        padding: clamp(1rem, 2.5vw, 1.75rem);
+        border: 0;
+        border-radius: 16px;
+        background: var(--lime);
+        color: var(--bg);
+        font-weight: 700;
+      }
+
+      .kache-results .kache-revenue b {
+        margin-top: 0.25rem;
+        font-size: clamp(3.75rem, 8vw, 7rem);
       }
 
       .kache-estimate {
@@ -1325,7 +1341,7 @@
           </svg>
           <span translate="no">doscientos</span>
         </a>
-        <span class="count" aria-live="polite"><span id="counter">01 / 10</span></span>
+        <span class="count" aria-live="polite"><span id="counter">01 / 13</span></span>
       </div>
     </header>
 
@@ -1482,10 +1498,10 @@
       </section>
 
       <section
-        class="slide"
+        class="slide kache-slide"
         id="kache"
-        data-label="Kache Envíos"
-        data-nav-label="Kache"
+        data-label="Kache Envíos · Procés"
+        data-nav-label="Kache 1"
         aria-labelledby="t-kache"
       >
         <h2 id="t-kache">
@@ -1517,7 +1533,33 @@
             <p>Envia els PDF i la invitació al calendari.</p>
           </li>
         </ol>
+      </section>
+
+      <section
+        class="slide kache-slide"
+        id="kache-impacte"
+        data-label="Kache Envíos · Impacte"
+        data-nav-label="Kache 2"
+        aria-labelledby="t-kache-impacte"
+      >
+        <h2 id="t-kache-impacte">
+          <span translate="no">Kache Envíos</span>: <em>l’impacte en xifres</em>
+        </h2>
         <div class="kache-results">
+          <dl class="stats">
+            <div class="stat kache-revenue">
+              <dt>Facturació</dt>
+              <dd><b>×3</b></dd>
+            </div>
+            <div class="stat">
+              <dt>Flota</dt>
+              <dd><b>D’1 a 3 camions</b></dd>
+            </div>
+            <div class="stat">
+              <dt>Estalvi setmanal estimat</dt>
+              <dd><b>≈17&nbsp;h 10&nbsp;min</b></dd>
+            </div>
+          </dl>
           <div>
             <table class="kache-comparison" aria-describedby="kache-estimate">
               <caption>
@@ -1574,23 +1616,6 @@
               Estalvi orientatiu: 1&nbsp;h 43&nbsp;min per servei × 10 serveis per setmana =
               17&nbsp;h 10&nbsp;min.
             </p>
-          </div>
-          <div>
-            <h3>Què hi han guanyat?</h3>
-            <dl class="stats">
-              <div class="stat">
-                <dt>Facturació</dt>
-                <dd><b>×3</b></dd>
-              </div>
-              <div class="stat">
-                <dt>Flota</dt>
-                <dd><b>D’1 a 3 camions</b></dd>
-              </div>
-              <div class="stat hl">
-                <dt>Estalvi setmanal estimat</dt>
-                <dd><b>≈17&nbsp;h 10&nbsp;min</b></dd>
-              </div>
-            </dl>
           </div>
         </div>
         <a class="kache-link" href="https://doscientos.es/projects/kache-envios">

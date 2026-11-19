@@ -767,6 +767,67 @@
         color: var(--lime);
       }
 
+      .slide#kache {
+        padding-block: 5rem 6rem;
+      }
+
+      .slide#kache h2 {
+        max-width: none;
+        font-size: clamp(2.4rem, 4.5vw, 3.75rem);
+      }
+
+      .kache-results {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .kache-comparison {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: clamp(0.8rem, 1.2vw, 1rem);
+        font-variant-numeric: tabular-nums;
+        text-align: left;
+      }
+
+      .kache-comparison caption {
+        margin-bottom: 0.5rem;
+        font-size: 1.17rem;
+        font-weight: 700;
+        text-align: left;
+      }
+
+      .kache-comparison th,
+      .kache-comparison td {
+        padding: 0.45rem 0.3rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .kache-comparison tr > :first-child {
+        padding-left: 0;
+      }
+
+      .kache-comparison td {
+        color: var(--dim);
+      }
+
+      .kache-results .stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 0.75rem;
+      }
+
+      .kache-results .stat b {
+        font-size: clamp(1.65rem, 3vw, 2.75rem);
+      }
+
+      .kache-estimate {
+        margin-top: 0.75rem;
+        color: var(--dim);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
       .kache-link {
         display: inline-flex;
         align-self: flex-start;
@@ -985,6 +1046,10 @@
         line-height: 1.5;
       }
 
+      .kache-flow {
+        margin-top: 1.5rem;
+      }
+
       .kache-flow .flow-automatic {
         border-color: rgb(195 255 120/0.35);
         background: rgb(195 255 120/0.08);
@@ -1000,13 +1065,6 @@
 
       .flow-automatic .flow-tag {
         color: var(--lime);
-      }
-
-      .abaco-benefit {
-        margin-top: 2rem;
-        color: var(--lime);
-        font-size: clamp(1rem, 1.5vw, 1.25rem);
-        font-weight: 600;
       }
 
       .slide#equip .grid {
@@ -1111,6 +1169,10 @@
       }
 
       @media (max-width: 900px) {
+        .kache-results {
+          grid-template-columns: 1fr;
+        }
+
         .split {
           grid-template-columns: 1fr;
         }
@@ -1203,6 +1265,11 @@
       }
 
       @media (max-width: 560px) {
+        .kache-results .stats {
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+        }
+
         #abaco .process-flow {
           grid-template-columns: 1fr;
           gap: 0.75rem;
@@ -1445,6 +1512,55 @@
             <p>Envia els PDF i la invitació al calendari.</p>
           </li>
         </ol>
+        <div class="kache-results">
+          <div>
+            <table class="kache-comparison" aria-describedby="kache-estimate">
+              <caption>
+                Temps de gestió administrativa
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Període</th>
+                  <th scope="col">Abans</th>
+                  <th scope="col">Ara (est.)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Per servei</th>
+                  <td>Més d’1&nbsp;h</td>
+                  <td>20&nbsp;min</td>
+                </tr>
+                <tr>
+                  <th scope="row">Per setmana (10 serveis)</th>
+                  <td>Més de 10&nbsp;h</td>
+                  <td>3&nbsp;h 20&nbsp;min</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="kache-estimate" id="kache-estimate">
+              Càlcul orientatiu amb 10 serveis per setmana i 60 min com a base: (60 − 20) × 10 =
+              400&nbsp;min, és a dir, 6&nbsp;h 40&nbsp;min.
+            </p>
+          </div>
+          <div>
+            <h3>Què hi han guanyat?</h3>
+            <dl class="stats">
+              <div class="stat">
+                <dt>Facturació</dt>
+                <dd><b>×3</b></dd>
+              </div>
+              <div class="stat">
+                <dt>Flota</dt>
+                <dd><b>D’1 a 3 camions</b></dd>
+              </div>
+              <div class="stat hl">
+                <dt>Estalvi setmanal estimat</dt>
+                <dd><b>≈6&nbsp;h 40&nbsp;min</b></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
         <a class="kache-link" href="https://doscientos.es/projects/kache-envios">
           Veure el projecte <span aria-hidden="true">&nbsp;→</span>
         </a>
@@ -1547,7 +1663,6 @@
             <p>Factura i controla els cobraments.</p>
           </li>
         </ol>
-        <p class="abaco-benefit">14 dies de prova · sense targeta</p>
       </section>
 
       <section class="slide" id="equip" data-label="Equip" aria-labelledby="t-equip">

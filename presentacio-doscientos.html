@@ -776,17 +776,16 @@
         font-size: clamp(2.4rem, 4.5vw, 3.75rem);
       }
 
-      .kache-results {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
-        gap: 1.5rem;
+      .kache-comparison-panel {
+        width: 100%;
+        max-width: 60rem;
         margin-top: 1.5rem;
       }
 
       .kache-comparison {
         width: 100%;
         border-collapse: collapse;
-        font-size: clamp(0.8rem, 1.2vw, 1rem);
+        font-size: clamp(0.875rem, 1.35vw, 1.125rem);
         font-variant-numeric: tabular-nums;
         text-align: left;
       }
@@ -817,18 +816,22 @@
         font-weight: 700;
       }
 
-      .kache-results .stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .kache-highlights {
+        grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr));
         gap: 1rem;
-        margin-top: 0;
+        margin-top: 1.5rem;
       }
 
-      .kache-results .stat b {
+      .kache-highlights .stat b {
         font-size: clamp(1.65rem, 3vw, 2.75rem);
       }
 
-      .kache-results .kache-revenue {
-        grid-column: 1 / -1;
+      .kache-highlights .kache-revenue {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.5rem 1rem;
         padding: clamp(1rem, 2.5vw, 1.75rem);
         border: 0;
         border-radius: 16px;
@@ -837,8 +840,11 @@
         font-weight: 700;
       }
 
-      .kache-results .kache-revenue b {
-        margin-top: 0.25rem;
+      .kache-highlights .kache-revenue dt {
+        font-size: clamp(1.25rem, 2.5vw, 2rem);
+      }
+
+      .kache-highlights .kache-revenue b {
         font-size: clamp(3.75rem, 8vw, 7rem);
       }
 
@@ -1190,10 +1196,6 @@
       }
 
       @media (max-width: 900px) {
-        .kache-results {
-          grid-template-columns: 1fr;
-        }
-
         .split {
           grid-template-columns: 1fr;
         }
@@ -1270,6 +1272,14 @@
       }
 
       @media (max-width: 760px) {
+        .kache-highlights {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .kache-highlights .kache-revenue {
+          grid-column: 1 / -1;
+        }
+
         .results-grid,
         .kache-flow {
           grid-template-columns: 1fr;
@@ -1286,7 +1296,7 @@
       }
 
       @media (max-width: 560px) {
-        .kache-results .stats {
+        .kache-highlights {
           grid-template-columns: 1fr;
           gap: 0.75rem;
         }
@@ -1500,13 +1510,25 @@
       <section
         class="slide kache-slide"
         id="kache"
-        data-label="Kache Envíos · Procés"
+        data-label="Kache Envíos · Impacte"
         data-nav-label="Kache 1"
         aria-labelledby="t-kache"
       >
-        <h2 id="t-kache">
-          <span translate="no">Kache Envíos</span>: <em>de la reserva a la confirmació</em>
-        </h2>
+        <h2 id="t-kache"><span translate="no">Kache Envíos</span>: <em>l’impacte en xifres</em></h2>
+        <dl class="stats kache-highlights">
+          <div class="stat kache-revenue">
+            <dt>Facturació</dt>
+            <dd><b>×3</b></dd>
+          </div>
+          <div class="stat">
+            <dt>Flota</dt>
+            <dd><b>D’1 a 3 camions</b></dd>
+          </div>
+          <div class="stat">
+            <dt>Estalvi setmanal estimat</dt>
+            <dd><b>≈51&nbsp;h 30&nbsp;min</b></dd>
+          </div>
+        </dl>
         <ol class="process-flow kache-flow" role="list" aria-label="Flux d’una reserva en línia">
           <li>
             <span class="step-number" aria-hidden="true">1</span>
@@ -1538,85 +1560,67 @@
       <section
         class="slide kache-slide"
         id="kache-impacte"
-        data-label="Kache Envíos · Impacte"
+        data-label="Kache Envíos · Comparativa"
         data-nav-label="Kache 2"
         aria-labelledby="t-kache-impacte"
       >
-        <h2 id="t-kache-impacte">
-          <span translate="no">Kache Envíos</span>: <em>l’impacte en xifres</em>
-        </h2>
-        <div class="kache-results">
-          <dl class="stats">
-            <div class="stat kache-revenue">
-              <dt>Facturació</dt>
-              <dd><b>×3</b></dd>
-            </div>
-            <div class="stat">
-              <dt>Flota</dt>
-              <dd><b>D’1 a 3 camions</b></dd>
-            </div>
-            <div class="stat">
-              <dt>Estalvi setmanal estimat</dt>
-              <dd><b>≈51&nbsp;h 30&nbsp;min</b></dd>
-            </div>
-          </dl>
-          <div>
-            <table class="kache-comparison" aria-describedby="kache-estimate">
-              <caption>
-                Temps de gestió administrativa
-              </caption>
-              <thead>
-                <tr>
-                  <th scope="col">Tasca</th>
-                  <th scope="col">Abans</th>
-                  <th scope="col">Ara (est.)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Sol·licitud</th>
-                  <td>1&nbsp;h</td>
-                  <td>15&nbsp;min</td>
-                </tr>
-                <tr>
-                  <th scope="row">Pagament</th>
-                  <td>10&nbsp;min</td>
-                  <td>0&nbsp;min</td>
-                </tr>
-                <tr>
-                  <th scope="row">Assignació al camió (abans amb Excel)</th>
-                  <td>10&nbsp;min</td>
-                  <td>0&nbsp;min</td>
-                </tr>
-                <tr>
-                  <th scope="row">Comunicació</th>
-                  <td>30&nbsp;min</td>
-                  <td>2&nbsp;min</td>
-                </tr>
-                <tr>
-                  <th scope="row">Facturació</th>
-                  <td>10&nbsp;min</td>
-                  <td>0&nbsp;min</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th scope="row">Total per servei</th>
-                  <td>2&nbsp;h</td>
-                  <td>17&nbsp;min</td>
-                </tr>
-                <tr>
-                  <th scope="row">Per setmana (30 serveis)</th>
-                  <td>60&nbsp;h</td>
-                  <td>8&nbsp;h 30&nbsp;min</td>
-                </tr>
-              </tfoot>
-            </table>
-            <p class="kache-estimate" id="kache-estimate">
-              Estalvi orientatiu: 1&nbsp;h 43&nbsp;min per servei × 30 serveis per setmana =
-              51&nbsp;h 30&nbsp;min.
-            </p>
-          </div>
+        <h2 id="t-kache-impacte"><span translate="no">Kache Envíos</span>: <em>abans i ara</em></h2>
+        <div class="kache-comparison-panel">
+          <table class="kache-comparison" aria-describedby="kache-estimate">
+            <caption>
+              Temps de gestió administrativa
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Tasca</th>
+                <th scope="col">Abans</th>
+                <th scope="col">Ara (est.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Sol·licitud</th>
+                <td>1&nbsp;h</td>
+                <td>15&nbsp;min</td>
+              </tr>
+              <tr>
+                <th scope="row">Pagament</th>
+                <td>10&nbsp;min</td>
+                <td>0&nbsp;min</td>
+              </tr>
+              <tr>
+                <th scope="row">Assignació al camió (abans amb Excel)</th>
+                <td>10&nbsp;min</td>
+                <td>0&nbsp;min</td>
+              </tr>
+              <tr>
+                <th scope="row">Comunicació</th>
+                <td>30&nbsp;min</td>
+                <td>2&nbsp;min</td>
+              </tr>
+              <tr>
+                <th scope="row">Facturació</th>
+                <td>10&nbsp;min</td>
+                <td>0&nbsp;min</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Total per servei</th>
+                <td>2&nbsp;h</td>
+                <td>17&nbsp;min</td>
+              </tr>
+              <tr>
+                <th scope="row">Per setmana (30 serveis)</th>
+                <td>60&nbsp;h</td>
+                <td>8&nbsp;h 30&nbsp;min</td>
+              </tr>
+            </tfoot>
+          </table>
+          <p class="kache-estimate" id="kache-estimate">
+            Estalvi orientatiu: 1&nbsp;h 43&nbsp;min per servei × 30 serveis per setmana = 51&nbsp;h
+            30&nbsp;min.
+          </p>
         </div>
         <a class="kache-link" href="https://doscientos.es/projects/kache-envios">
           Veure el projecte <span aria-hidden="true">&nbsp;→</span>
